@@ -1,0 +1,13 @@
+{
+  "name": "static-site",
+  "private": true,
+  "scripts": {
+    "build": "rm -rf public && mkdir -p public && [ -d src/html ] && cp -r src/html/* public/ || true && [ -d src/css ] && cp -r src/css public/ || true && [ -d src/js ] && cp -r src/js public/ || true && [ -d src/assets ] && cp -r src/assets public/ || true && find public -type f -name '*.html' -exec npx html-minifier-terser {} --collapse-whitespace --remove-comments --remove-redundant-attributes --remove-script-type-attributes --remove-style-link-type-attributes --use-short-doctype --minify-css true --minify-js true -o {} \\; && find public -type f -name '*.css' -exec npx cleancss -o {} {} \\; && find public -type f -name '*.js' -exec npx terser {} -c -m -o {} \\; && node -e \"import fs from 'fs'; import path from 'path'; import sharp from 'sharp'; const exts=['.jpg','.jpeg','.png','.webp','.avif']; const compressDir=async dir=>{for(const f of fs.readdirSync(dir,{withFileTypes:true})){const full=path.join(dir,f.name);if(f.isDirectory()){await compressDir(full);}else if(exts.includes(path.extname(f.name).toLowerCase())){const buf=fs.readFileSync(full);let out;switch(path.extname(f.name).toLowerCase()){case'.jpg':case'.jpeg':out=await sharp(buf).jpeg({quality:1, mozjpeg:true}).toBuffer();break;case'.png':out=await sharp(buf).png({compressionLevel:9, palette:true, force:true}).toBuffer();break;case'.webp':out=await sharp(buf).webp({quality:1, effort:6}).toBuffer();break;case'.avif':out=await sharp(buf).avif({quality:1, effort:9}).toBuffer();break;}fs.writeFileSync(full,out);console.log('Optimized:',full);}}}; compressDir('public/assets');\" && echo '✅ Build complete'"
+  },
+  "devDependencies": {
+    "clean-css-cli": "^5.6.2",
+    "html-minifier-terser": "^7.2.0",
+    "terser": "^5.31.0",
+    "sharp": "^0.34.5"
+  }
+}
