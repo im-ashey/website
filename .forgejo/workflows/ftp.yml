@@ -3,7 +3,10 @@ name: 🚀 Deploy website
 on:
   push:
     paths:
-      - "public/"
+      - "src/**"
+      - "tsconfig.json"
+      - "package.json"
+      - "public/**"
   workflow_dispatch:
 
 concurrency:
@@ -12,27 +15,46 @@ concurrency:
 
 jobs:
   web-deploy:
-    runs-on: host
-    container:
-      image: local-node-lftp:latest
+    runs-on: ubuntu-latest
 
     steps:
-      - name: get code
+      - name: Get code
         uses: actions/checkout@v4
         with:
           fetch-depth: 1
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Cache build output
+        uses: actions/cache@v3
+        with:
+          path: public
+          key: build-${{ hashFiles('src/**') }}-${{ hashFiles('package-lock.json') }}
+          restore-keys: |
+            build-
+
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
       - name: Build
         run: npm run build
 
-      - name: ftp :3
-        run: |
-          echo "Starting FTP deployment..."
-          lftp -u "$FTP_USER","$FTP_PASSWORD" "$FTP_SERVER" -e 'set ssl:verify-certificate no; mirror -R --delete --verbose public /; quit'
+      - name: Install lftp
+        run: sudo apt-get update && sudo apt-get install -y lftp
+
+      - name: FTP Deploy
         env:
           FTP_SERVER: ftp.jackpurrin.moe
           FTP_USER: moe@jackpurrin.moe
           FTP_PASSWORD: ${{ secrets.ftp_password }}
+        run: |
+          echo "Starting FTP deployment..."
+          lftp -u "$FTP_USER","$FTP_PASSWORD" "$FTP_SERVER" <<EOF
+          set ssl:verify-certificate no
+          mirror -R --delete --verbose --only-newer public /
+          quit
+          EOF
