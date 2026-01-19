@@ -1,7 +1,9 @@
 @import url(vars.css);
+
 @import url(fonts.css);
 
-html, body {
+html,
+body {
     margin: 0;
     padding: none;
     height: 100%;
@@ -9,7 +11,24 @@ html, body {
 }
 
 .bkg {
-    background-image: url("/assets/img/background.jpg");
+    @supports (
+        background-image:
+            url("data:image/avif;base64,AAAAIGZ0eXBhdmlmAAAAAG1pZjFoZGxyAAAAA...")
+    ) {
+        .bg {
+            background-image: url("https://cdn.jsdelivr.net/gh/luvily-autumn/assets@compressed/img/background.f4d522a8.avif");
+        }
+    }
+
+    @supports (
+        background-image:
+            url("data:image/webp;base64,UklGRiIAAABXRUJQVlA4TAYAAAAvAAAAAAfQ//73v/+BiOh/AAA=")
+    ) {
+        .bg {
+            background-image: url("https://cdn.jsdelivr.net/gh/luvily-autumn/assets@compressed/img/background.f4d522a8.webp");
+        }
+    }
+
     height: 100vh;
     background-position: center;
     background-repeat: no-repeat;
