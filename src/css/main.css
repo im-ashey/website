@@ -44,6 +44,10 @@ main {
     padding-bottom: 40px;
 }
 
+.right img {
+    height: 30vh;
+}
+
 .footer {
     position: fixed;
     left: 0;
