@@ -1,64 +1,17 @@
-name: 🚀 Deploy website
-
-on:
-  push:
-    paths:
-      - "src/**"
-      - "tsconfig.json"
-      - "package.json"
-      - "pnpm-lock.yaml"
-      - "public/**"
-  workflow_dispatch:
-
-concurrency:
-  group: web-deploy
-  cancel-in-progress: true
-
+on: push
+name: 🚀 Deploy website on push
 jobs:
   web-deploy:
+    name: 🎉 Deploy
     runs-on: ubuntu-latest
-
     steps:
-      - uses: actions/checkout@v4
-
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v4
-        with:
-          version: 9
-          run_install: false
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          cache: pnpm
-
-      - name: Cache build output
-        uses: actions/cache@v3
-        with:
-          path: public
-          key: build-${{ hashFiles('src/**') }}-${{ hashFiles('pnpm-lock.yaml') }}
-          restore-keys: |
-            build-
-
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
-
-      - name: Build
-        run: pnpm run build
-
-      - name: Install lftp
-        run: sudo apt-get update && sudo apt-get install -y lftp
-
-      - name: FTP Deploy
-        env:
-          FTP_SERVER: ftp.jackpurrin.moe
-          FTP_USER: moe@jackpurrin.moe
-          FTP_PASSWORD: ${{ secrets.ftp_password }}
-        run: |
-          echo "Starting FTP deployment..."
-          lftp -u "$FTP_USER","$FTP_PASSWORD" "$FTP_SERVER" <<EOF
-          set ssl:verify-certificate no
-          mirror -R --delete --verbose --only-newer public /
-          quit
-          EOF
+    - name: 🚚 Get latest code
+      uses: actions/checkout@v4
+    
+    - name: 📂 Sync files
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.6
+      with:
+        local-dir: public/
+        server: ftp.jackpurrin.moe
+        username: moe@jackpurrin.moe
+        password: ${{ secrets.ftp_password }}
