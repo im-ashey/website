@@ -1,1 +1,74 @@
-:root{--bkg-color:#3e3e3e99;--font-color:#e0def4;--font-size:0.85rem;--link-color:#c4a7e7;--border-color:#524f67;--border:.2rem;--drop-shadow:.7rem;--header-padding:.1rem;--padding:1.5rem}html{color:var(--font-color);font-family:'Times New Roman',Times,serif;font-size:var(--font-size);text-align:center;text-transform:lowercase}h1{font-style:oblique}a{color:var(--link-color);text-decoration:none}body,html{margin:0;padding:none;height:100%;background-color:var(--bkg-color)}.bkg{background-image:url("/assets/img/background.jpg");height:100vh;background-position:center;background-repeat:no-repeat;background-size:cover;filter:blur(8px);-webkit-filter:blur(8px)}main{margin:0;padding:20px;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background-color:var(--bkg-color);border:2.5px var(--border-color) solid;width:45%}.left{float:left;padding-right:10px;margin-left:5%;padding-bottom:40px}.right{float:right;padding-left:10px;margin-right:5%;padding-bottom:40px}.right img{height:30vh}.footer{position:fixed;left:0;bottom:0;width:100%;padding-bottom:10px}
+:root {
+    --bkg-color: #3e3e3e99;
+    --font-color: #e0def4;
+    --font-size: 0.85rem;
+    --link-color: #c4a7e7;
+    --border-color: #524f67;
+    --border: 0.2rem;
+    --drop-shadow: 0.7rem;
+    --header-padding: 0.1rem;
+    --padding: 1.5rem;
+}
+html {
+    color: var(--font-color);
+    font-family: "Times New Roman", Times, serif;
+    font-size: var(--font-size);
+    text-align: center;
+    text-transform: lowercase;
+}
+h1 {
+    font-style: oblique;
+}
+a {
+    color: var(--link-color);
+    text-decoration: none;
+}
+body,
+html {
+    margin: 0;
+    padding: none;
+    height: 100%;
+    background-color: var(--bkg-color);
+}
+.bkg {
+    background-image: url("/assets/img/background.jpg");
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+}
+main {
+    margin: 0;
+    padding: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--bkg-color);
+    border: 2.5px var(--border-color) solid;
+    width: 45%;
+}
+.left {
+    float: left;
+    padding-right: 10px;
+    margin-left: 5%;
+    padding-bottom: 40px;
+}
+.right {
+    float: right;
+    padding-left: 10px;
+    margin-right: 5%;
+    padding-bottom: 40px;
+}
+.right img {
+    height: 30vh;
+}
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding-bottom: 10px;
+}
