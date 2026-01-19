@@ -5,6 +5,7 @@ html, body {
     margin: 0;
     padding: none;
     height: 100%;
+    background-color: black;
 }
 
 .bkg {
@@ -13,6 +14,8 @@ html, body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
 }
 
 main {
