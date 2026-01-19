@@ -28,3 +28,13 @@ main {
     background-color: var(--bkg-color);
     border: 2.5px var(--border-color) solid;
 }
+
+.left {
+    float: left;
+    padding-right: 10px;
+}
+
+.right {
+    float: right;
+    padding-left: 10px;
+}
