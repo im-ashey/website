@@ -1,8 +1,17 @@
 @import url(vars.css);
 @import url(fonts.css);
 
-html {
-    background-image: url('/assets/img/background.jpg');
+html, body {
+    margin: 0;
+    padding: none;
+    height: 100%;
+}
+
+.bkg {
+    background-image: url("/assets/img/background.jpg");
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
     background-size: cover;
 }
 
