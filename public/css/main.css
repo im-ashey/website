@@ -27,3 +27,7 @@ main {
     border: 2.5px var(--border-color) solid;
     width: 45%;
 }
+
+i {
+    padding: 10px;
+}
