@@ -33,13 +33,14 @@ main {
 .left {
     float: left;
     padding-right: 10px;
-    margin-left: 7%;
+    margin-left: 5%;
     padding-bottom: 40px;
 }
 
 .right {
     float: right;
     padding-left: 10px;
+    margin-right: 5%;
     padding-bottom: 40px;
 }
 
