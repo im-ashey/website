@@ -13,4 +13,11 @@ main {
     border: 2px var(--border-color) solid;
     background-color: var(--bkg-color);
     padding: var(--padding);
+    width: 50%;
+    max-height: 50vh !important;
+    overflow: scroll;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
