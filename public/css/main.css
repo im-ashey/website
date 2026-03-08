@@ -1,37 +1,16 @@
 @import url(fonts.css);
 @import url(vars.css);
 
-body,
 html {
-    margin: 0;
-    padding: none;
-    height: 100%;
-    background-color: var(--bkg-color);
-}
-.bkg {
-    background-image: url("/assets/img/background.jpg");
-    height: 100vh;
+    background-image: url('/assets/img/background.jpg');
+    background-size: fit;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
-    filter: blur(8px);
-    -webkit-filter: blur(8px);
+    line-height: 1rem !important;
 }
+
 main {
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    border: 2px var(--border-color) solid;
     background-color: var(--bkg-color);
-    border: 2.5px var(--border-color) solid;
-    width: 45%;
-}
-i {
-    padding: 10px;
-}
-ul {
-    list-style: none;
-    padding: 0;
-    margin: none;
+    padding: var(--padding);
 }
