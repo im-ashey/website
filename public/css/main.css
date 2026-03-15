@@ -2,7 +2,7 @@
 @import url(vars.css);
 
 html {
-    background-image: url('/assets/img/background.jpg');
+    background-image: url("/assets/img/background.jpg");
     background-size: fit;
     background-position: center;
     background-repeat: no-repeat;
@@ -15,9 +15,11 @@ main {
     padding: var(--padding);
     width: 50%;
     max-height: 50vh !important;
-    overflow: scroll;
+    overflow: auto;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    overflow-wrap: break-word;
+    word-break: break-all;
 }
