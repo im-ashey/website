@@ -1,12 +1,18 @@
 @import url(fonts.css);
 @import url(vars.css);
 
-html {
-    background-image: url("/assets/img/background.jpg");
-    background-size: fit;
-    background-position: center;
-    background-repeat: no-repeat;
-    line-height: 1rem !important;
+html, body {
+  height: 100%;
+  margin: 0;
+  line-height: 1rem !important;
+}
+
+body {
+  min-height: 100vh;
+  background-image: url("/assets/img/background.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 main {
