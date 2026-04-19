@@ -1,31 +1,20 @@
-@import url(fonts.css);
-@import url(vars.css);
-
-html, body {
-  height: 100%;
-  margin: 0;
-  line-height: 1rem !important;
-}
-
-body {
-  min-height: 100vh;
-  background-image: url("/assets/img/background.webp");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+html {
+  background-color: #39393d;
+  color: #AAAAAA;
+  text-align: center;
 }
 
 main {
-    border: 2px var(--border-color) solid;
-    background-color: var(--bkg-color);
-    padding: var(--padding);
-    width: 50%;
-    max-height: 50vh !important;
-    overflow: auto;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    overflow-wrap: break-word;
-    word-break: break-all;
+  padding: 1rem;
+}
+
+a {
+  color: #4b7aAA;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
