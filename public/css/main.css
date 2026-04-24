@@ -5,18 +5,12 @@ html {
     background-color: #000000;
     color: #7f0000;
     font-family: "Anonymous Pro", monospace;
-    text-align: center;
 }
 
 main {
     padding: 1rem;
     margin: auto;
     width: 35%;
-}
-
-pre {
-    text-align: left;
-    margin-left: 20%;
 }
 
 h1, h2 {
