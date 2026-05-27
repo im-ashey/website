@@ -47,6 +47,15 @@ hr {
 	border: 0.5px #007f00 dotted;
 }
 
+iframe {
+	padding: 0;
+	padding-top: 20px;
+	margin: 0;
+	border: none;
+	width: 100%;
+	height: 0;
+}
+
 .nav {
 	display: flex;
 	width: initial;
