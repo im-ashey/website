@@ -6,7 +6,6 @@
         <meta charset="utf-8" />
         <link rel="shortcut icon" href="assets/img/favicon.ico" />
         <link rel="stylesheet" href="css/main.css" />
-        <script src="//kit.fontawesome.com/38208c653e.js" crossorigin="anonymous"></script>
         <script src="js/main.js"></script>
     </head>
     <body>
@@ -16,12 +15,12 @@
             </header>
             <nav>
             	<ul class="nav">
-              		<li><a href="#">home</a></li>
-             		<li><a href="about">about</a></li>
-               		<li><a href="contact">contact + links</a></li>
+              		<li><a onclick="changeFrame('home.html')">home</a></li>
+             		<li><a onclick="changeFrame('about.html')">about</a></li>
+               		<li><a onclick="changeFrame('contact.html')">contact + links</a></li>
              	</ul>
             </nav>
-            <iframe src="about.html" onload="resizeIframe(this)" />
+            <iframe id="page" src="home.html" onload="resizeIframe(this)" />
         </main>
         <img src="assets/img/acandled.gif" class="pet">
     </body>
