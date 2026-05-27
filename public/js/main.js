@@ -1,6 +1,6 @@
 function resizeIframe(obj) {
 	// THANK YOU https://stackoverflow.com/a/9976309 !!!
-		obj.style.height = obj.contentWindow.document.documentElement.scrollHeight + 2 + 'px';
+		obj.style.height = obj.contentWindow.document.documentElement.scrollHeight + 5 + 'px';
 }
 
 function changeFrame(page) {
