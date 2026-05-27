@@ -1,32 +1,25 @@
-@import url("https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap");
-/* this adds in the anonymous pro nerd font cuz i like it */
+@import url(vars.css);
 
 html {
-	background-color: #000000;
-	color: #007f00;
-	font-family: "Anonymous Pro", monospace;
-}
-
-body {
-	margin: 0;
-	padding: 0;
+	background-color: var(--bkg-color);
+	color: var(--fnt-color);
+	font-family: var(--fnt);
 }
 
 main {
-	padding: 1rem;
 	margin: auto;
-	width: 35%;
-	overflow: scroll;
+	width: 40%;
 }
 
 h1,
-h2 {
+h2,
+a,
+.favorite {
 	font-style: italic;
 }
 
 a {
-	color: #00df00;
-	font-style: italic;
+	color: var(--lnk-color);
 }
 
 ul {
@@ -37,19 +30,19 @@ ul {
 
 lastfm-tracks {
 	box-sizing: border-box;
-	border: 1px solid #000;
+	border: 1px solid var(--bkg-color);
 	width: inital;
 	height: 300px;
 }
 
 hr {
 	margin-top: 20px;
-	border: 0.5px #007f00 dotted;
+	border: 0.5px var(--fnt-color) dotted;
 }
 
 iframe {
 	padding: 0;
-	padding-top: 20px;
+	padding-top: var(--top-padding);
 	margin: 0;
 	border: none;
 	width: 100%;
@@ -67,7 +60,7 @@ iframe {
 		flex: 1;
 		margin: auto;
 		text-align: center;
-		border: 1px #007f00 solid;
+		border: 1px var(--fnt-color) solid;
 	}
 }
 
@@ -103,10 +96,6 @@ iframe {
 
 .cover {
 	height: 50px;
-}
-
-.favorite {
-	font-style: italic;
 }
 
 .xmr {
