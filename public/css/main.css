@@ -38,3 +38,28 @@ lastfm-tracks {
 .emma {
 	width: 100px
 }
+
+.gallery {
+	height: 100px;
+	display: flex;
+	overflow-x: scroll;
+	overflow-y: clip;
+}
+
+.item {
+ 	display: flex;
+    align-items:center;
+}
+
+.text {
+	padding: 10px;
+ 	width: 125px;
+}
+
+.cover {
+	height: 50px;
+}
+
+.favorite {
+	font-style: italic;
+}
