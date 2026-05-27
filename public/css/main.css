@@ -16,6 +16,7 @@ main {
     padding: 1rem;
     margin: auto;
     width: 35%;
+    overflow: scroll;
 }
 
 h1, h2 {
@@ -54,14 +55,6 @@ hr {
     border-radius: 16px;
 }
 
-.chains {
-	background-image: url('../assets/img/chain.gif');
-	background-repeat: repeat-x;
-	height: 20px;
-	margin-left: 15px;
-	width: 100%;
-}
-
 .emma {
 	width: 100px
 }
@@ -89,4 +82,9 @@ hr {
 
 .favorite {
 	font-style: italic;
+}
+
+.xmr {
+	max-width: initial;
+	overflow: scroll;
 }
