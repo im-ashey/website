@@ -20,6 +20,7 @@ a,
 
 a {
 	color: var(--lnk-color);
+
 }
 
 ul {
@@ -56,6 +57,12 @@ iframe {
 .nav {
 	display: flex;
 	width: initial;
+	p:hover {
+		transition: 1s;
+		font-weight: bold;
+		font-size: 1.2rem;
+		cursor:pointer;
+	}
 	li {
 		flex: 1;
 		margin: auto;
