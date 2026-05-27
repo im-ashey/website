@@ -6,24 +6,24 @@
         <meta charset="utf-8" />
         <link rel="shortcut icon" href="assets/img/favicon.ico" />
         <link rel="stylesheet" href="css/main.css" />
-        <script src="js/main.js"></script>
     </head>
-    <body>
+    <body onload="changeFrame('pages/home.html', 'home')">
         <main>
             <header>
                 <h1>ash's corner</h1>
             </header>
             <nav>
             	<ul class="nav">
-              		<li><p onclick="changeFrame('pages/home.html')">home</p></li>
-             		<li><p onclick="changeFrame('pages/about.html')">about</p></li>
-               		<li><p onclick="changeFrame('pages/music.html')">music</p></li>
-                 	<li><p onclick="changeFrame('pages/webrings.html')">webrings</p></li>
-               		<li><p onclick="changeFrame('pages/contact.html')">contact + links</p></li>
+              		<li><p id="home" onclick="changeFrame('pages/home.html', 'home')">home</p></li>
+             		<li><p id="about" onclick="changeFrame('pages/about.html', 'about')">about</p></li>
+               		<li><p id="music" onclick="changeFrame('pages/music.html', 'music')">music</p></li>
+                 	<li><p id="webrings" onclick="changeFrame('pages/webrings.html', 'webrings')">webrings</p></li>
+               		<li><p id="contact" onclick="changeFrame('pages/contact.html', 'contact')">contact + links</p></li>
              	</ul>
             </nav>
             <img src="/assets/img/acandled.gif" class="pet" />
-            <iframe id="page" src="pages/home.html" onload="resizeIframe(this)" />
+            <script src="js/main.js"></script>
+            <iframe id="page" onload="resizeIframe(this)" />
         </main>
     </body>
 </html>
