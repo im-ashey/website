@@ -1,14 +1,12 @@
 function quote() {
-
 	fetch('../assets/other/quotes.json')
 	.then(response => response.json())
 	.then(data => {
 		let quotenum = Math.floor(Math.random() * Object.keys(data).length);
 		console.log(quotenum)
-		document.getElementById('quote').innerHTML = `${data["quote." + quotenum]["content"]} - ${data["quote." + quotenum]["author"]}`
+		document.getElementById('quote').innerHTML = `"${data['quote.' + quotenum]['content']}" - ${data['quote.' + quotenum]['author']}`
 	})
     .catch(error => console.error('something broke idk', error));
-
 }
 
 function resizeIframe(obj) {
