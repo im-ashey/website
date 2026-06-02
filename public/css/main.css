@@ -34,13 +34,6 @@ ul {
 	width: 900px;
 }
 
-lastfm-tracks {
-	box-sizing: border-box;
-	border: 1px solid var(--bkg-color);
-	width: inital;
-	height: 300px;
-}
-
 hr {
 	margin-top: 20px;
 	border: 0.5px var(--fnt-color) dotted;
@@ -59,7 +52,7 @@ iframe {
 	height: 100px;
 }
 
-.nav {
+.nav, .themes {
 	display: flex;
 	width: initial;
 	p:hover {
