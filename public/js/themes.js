@@ -1,10 +1,31 @@
 var cssRoot = document.querySelector(':root');
+let theme; 
 
 function checkTheme() {
-    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        setDark()
+    theme = localStorage.getItem("theme")
+
+    if (theme == null) {
+        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            setDark()
+        } else {
+            setLight()
+        }
     } else {
-        setLight()
+        if (theme == 'dark') {
+            setDark()
+        } else {
+            setLight()
+        }
+    }
+}
+
+function setSavedTheme(input) {
+    if (input == 'dark') {
+        localStorage.setItem('theme', 'dark')
+        location.reload();
+    } else {
+        localStorage.setItem('theme', 'light')
+        location.reload();
     }
 }
 
