@@ -78,6 +78,12 @@ iframe {
 	border-radius: 16px;
 }
 
+.webrings {
+	text-align: center;
+	width: 20%;
+	margin: auto;
+}
+
 .emma {
 	width: 100px;
 }
