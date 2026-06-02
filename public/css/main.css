@@ -29,6 +29,11 @@ ul {
 	padding: 0;
 }
 
+.lfmtext {
+	float: right;
+	width: 900px;
+}
+
 lastfm-tracks {
 	box-sizing: border-box;
 	border: 1px solid var(--bkg-color);
