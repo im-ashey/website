@@ -7,7 +7,7 @@
         <link rel="shortcut icon" href="assets/img/favicon.ico" />
         <link rel="stylesheet" href="css/main.css" />
     </head>
-    <body onload="quote(); changeFrame('pages/home.html', 'home')">
+    <body onload="checkTheme(); quote(); changeFrame('pages/home.html', 'home')">
         <main>
             <header>
                 <h1>ash's corner</h1>
@@ -25,7 +25,8 @@
             </nav>
             <img src="/assets/img/acandled.gif" class="pet" />
             <script src="js/main.js"></script>
-            <iframe id="page" onload="resizeIframe(this)" />
+            <script src="js/themes.js"></script>
+            <iframe id="page" onload="resizeIframe(this); checkTheme();" />
         </main>
     </body>
 </html>
