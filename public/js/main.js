@@ -1,3 +1,5 @@
+let buttons = ['home', 'about', 'music', 'webrings', 'contact'];
+
 function quote() {
 	fetch('../assets/other/quotes.json')
 	.then(response => response.json())
@@ -20,22 +22,15 @@ function resizeIframe(obj) {
 }
 
 function resetNav() {
-	document.getElementById('home').style.fontWeight = 'normal'
-	document.getElementById('about').style.fontWeight = 'normal'
-	document.getElementById('music').style.fontWeight = 'normal'
-	document.getElementById('webrings').style.fontWeight = 'normal'
-	document.getElementById('contact').style.fontWeight = 'normal'
-
-	document.getElementById('home').style.fontSize = '1rem'
-	document.getElementById('about').style.fontSize = '1rem'
-	document.getElementById('music').style.fontSize = '1rem'
-	document.getElementById('webrings').style.fontSize = '1rem'
-	document.getElementById('contact').style.fontSize = '1rem'
+	for (let i = 0; i < buttons.length; i++) {
+		document.getElementById(buttons[i]).style.fontWeight = 'normal'
+		document.getElementById(buttons[i]).style.textDecoration = "none";
+	}
 }
 
 function changeFrame(page, button) {
 	document.getElementById('page').src = page;
 	resetNav()
 	document.getElementById(button).style.fontWeight = "bold";
-	document.getElementById(button).style.fontSize = "1.2rem";
+	document.getElementById(button).style.textDecoration = "underline";
 }
