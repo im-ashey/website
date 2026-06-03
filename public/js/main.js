@@ -3,8 +3,13 @@ function quote() {
 	.then(response => response.json())
 	.then(data => {
 		let quotenum = Math.floor(Math.random() * Object.keys(data).length);
-		console.log(quotenum)
-		document.getElementById('quote').innerHTML = `"${data['quote.' + quotenum]['content']}" - ${data['quote.' + quotenum]['author']}`
+		if (data['quote.' + quotenum]['url']) {
+			document.getElementById('quote').outerHTML = "<a id='quote'>"
+			document.getElementById('quote').innerHTML = `"${data['quote.' + quotenum]['content']}" - ${data['quote.' + quotenum]['author']}`
+			document.getElementById('quote').href = `${data['quote.' + quotenum]['url']}`
+		} else {
+			document.getElementById('quote').innerHTML = `"${data['quote.' + quotenum]['content']}" - ${data['quote.' + quotenum]['author']}`
+		}
 	})
     .catch(error => console.error('something broke idk', error));
 }
