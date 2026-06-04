@@ -14,6 +14,7 @@ const profile_url = "https://social.nekoweb.org/profile/?view=";
 const post_url = "https://social.nekoweb.org/post/?id=";
 
 function getButtons() {
+    buttonList.length = 0;
     for (i = 0; i < navButtons; i++) {
         buttonList.push(navDom["children"][i]["firstChild"]["id"]);
     }
@@ -91,7 +92,8 @@ function renderLastFM() {
             const album = data["recenttracks"]["track"][0]["album"]["#text"];
 
             document.getElementById("lastfm").innerHTML = `"${name}" by "${artist}" on the "${album}" album.`;
-        });
+        })
+        .catch((error) => console.error("something broke idk", error));
 }
 
 // thanks max
