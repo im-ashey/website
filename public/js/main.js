@@ -31,15 +31,13 @@ function resizeIframe(obj) {
     obj.style.height = obj.contentWindow.document.documentElement.scrollHeight + 5 + "px";
 }
 
-function changeFrame(page, button) {
+function renderFrame(button) {
     getButtons();
-	if (button) {
-		document.getElementById("page").src = page;
-		for (let i = 0; i < buttonList.length; i++) {
-        	document.getElementById(buttonList[i]).style.fontWeight = "normal";
-        	document.getElementById(buttonList[i]).style.textDecoration = "none";
-    	}
-		document.getElementById(button).style.fontWeight = "bold";
-		document.getElementById(button).style.textDecoration = "underline";
-	}
+    document.getElementById("page").src = "/pages/" + button + ".html";
+    for (let i = 0; i < buttonList.length; i++) {
+        document.getElementById(buttonList[i]).style.fontWeight = "normal";
+        document.getElementById(buttonList[i]).style.textDecoration = "none";
+    }
+    document.getElementById(button).style.fontWeight = "bold";
+    document.getElementById(button).style.textDecoration = "underline";
 }
