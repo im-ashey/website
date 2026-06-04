@@ -1,9 +1,9 @@
 const navDom = document.querySelectorAll("ul.nav")[0];
-let navButtons: number = 0;
+let navButtons = 0;
 if (navDom) {
     navButtons = navDom["children"]["length"];
 }
-let buttonList: any[];
+let buttonList: any[] = [];
 
 const items = ["bkg", "fnt", "lnk"];
 const lightColors = ["#FFFFFF", "#7f0000", "#df0000"];
@@ -18,14 +18,14 @@ const post_url = "https://social.nekoweb.org/post/?id=";
 
 function getButtons() {
     buttonList.length = 0;
-    for (let i = 0; i < navButtons; i++) {
-        if (buttonList) {
-            if (navDom && navDom["children"]) {
-                buttonList.push(navDom["children"][i]["firstChild"]["id"]);
+    if (navDom) {
+        for (let i = 0; i < navDom.children.length; i++) {
+            const child = navDom.children[i]?.firstElementChild;
+
+            if (child instanceof HTMLElement && child.id) {
+                buttonList.push(child.id);
             }
-            
         }
-        
     }
 }
 
