@@ -1,4 +1,4 @@
-let buttons = ["home", "about", "music", "webrings", "contact"];
+let buttons = ["home", "about", "music", "webrings", "changelog", "contact"];
 
 function renderQuote() {
     fetch("../assets/other/quotes.json")
@@ -31,6 +31,7 @@ function warningAccepted() {
 		<li><p id="about" onclick="changeFrame('pages/about.html', 'about')">about</p></li>
 		<li><p id="music" onclick="changeFrame('pages/music.html', 'music')">music</p></li>
 		<li><p id="webrings" onclick="changeFrame('pages/webrings.html', 'webrings')">webrings</p></li>
+		<li><p id="changelog" onclick="changeFrame('pages/changelog.html', 'changelog')">changelog</p></li>
 		<li><p id="contact" onclick="changeFrame('pages/contact.html', 'contact')">contact + links</p></li>
 	</ul>
 	`
