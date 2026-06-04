@@ -7,7 +7,7 @@
         <link rel="shortcut icon" href="assets/img/favicon.ico" />
         <link rel="stylesheet" href="css/main.css" />
     </head>
-    <body onload="checkTheme(); renderFrame('pages/home.html', 'home'); renderQuote();">
+    <body onload="checkTheme(); renderFrame('home'); renderQuote();">
         <main>
             <header>
                 <h1>ash's corner</h1>
@@ -20,8 +20,9 @@
                     <li><p id="about" onclick="renderFrame('about')">about</p></li>
                     <li><p id="music" onclick="renderFrame('music')">music</p></li>
                     <li><p id="webrings" onclick="renderFrame('webrings')">webrings</p></li>
+                    <li><p id="projects" onclick="renderFrame('projects')">projects</p></li>
                     <li><p id="changelog" onclick="renderFrame('changelog')">changelog</p></li>
-                    <li><p id="contact" onclick="renderFrame('contact')">contact + links</p></li>
+                    <li><p id="contact" onclick="renderFrame('contact')">contact</p></li>
                 </ul>
             </nav>
             <img src="/assets/img/acandled.gif" class="pet" />
