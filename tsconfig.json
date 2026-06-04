@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    "rootDir": "./src/ts",
+    "outDir": "./public/js",
+
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+
+    "lib": ["ES2022", "DOM"],
+
+    "strict": true,
+
+    "sourceMap": false,
+
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+
+    "isolatedModules": true,
+    "verbatimModuleSyntax": true,
+
+    "skipLibCheck": true
+  },
+
+  "include": ["src/ts"]
+}
