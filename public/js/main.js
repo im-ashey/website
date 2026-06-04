@@ -1,10 +1,21 @@
 const navDom = document.querySelectorAll("ul.nav")[0];
-const navButtons = navDom['children']['length'];
+const navButtons = navDom["children"]["length"];
 let buttonList = [];
+
+const items = ["bkg", "fnt", "lnk"];
+const lightColors = ["#FFFFFF", "#7f0000", "#df0000"];
+const darkColors = ["#000000", "#007f00", "#00df00"];
+
+const cssRoot = document.querySelector(":root");
+
+const username = "ash"; // change the username!!!
+const posts_url = "https://cafe.frizzbees.dev/get_posts/1?name=";
+const profile_url = "https://social.nekoweb.org/profile/?view=";
+const post_url = "https://social.nekoweb.org/post/?id=";
 
 function getButtons() {
     for (i = 0; i < navButtons; i++) {
-        buttonList.push(navDom['children'][i]['firstChild']['id'])
+        buttonList.push(navDom["children"][i]["firstChild"]["id"]);
     }
 }
 
@@ -31,17 +42,17 @@ function renderPage(button) {
     getButtons();
 
     for (i = 0; i < buttonList.length; i++) {
-        document.getElementById(buttonList[i].slice(0, buttonList[i].indexOf('-button'))).hidden = true
+        document.getElementById(buttonList[i].slice(0, buttonList[i].indexOf("-button"))).hidden = true;
     }
 
-    document.getElementById(button).hidden = false
+    document.getElementById(button).hidden = false;
 
     for (let i = 0; i < buttonList.length; i++) {
         document.getElementById(buttonList[i]).style.fontWeight = "normal";
         document.getElementById(buttonList[i]).style.textDecoration = "none";
     }
-    document.getElementById(button + '-button').style.fontWeight = "bold";
-    document.getElementById(button + '-button').style.textDecoration = "underline";
+    document.getElementById(button + "-button").style.fontWeight = "bold";
+    document.getElementById(button + "-button").style.textDecoration = "underline";
 }
 
 // https://api.github.com/repos/im-ashey/website/commits
@@ -70,7 +81,9 @@ function renderChangelog() {
 // https://ws.audioscrobbler.com/2.0/?method=user.getRecentTracks&user=im-ashey&api_key=43b7021aa792aeb3c66ecdb10846253d&format=json
 
 function renderLastFM() {
-    fetch("https://ws.audioscrobbler.com/2.0/?method=user.getRecentTracks&limit=1&user=im-ash&api_key=43b7021aa792aeb3c66ecdb10846253d&format=json")
+    fetch(
+        "https://ws.audioscrobbler.com/2.0/?method=user.getRecentTracks&limit=1&user=im-ash&api_key=43b7021aa792aeb3c66ecdb10846253d&format=json"
+    )
         .then((response) => response.json())
         .then((data) => {
             const name = data["recenttracks"]["track"][0]["name"];
@@ -83,10 +96,6 @@ function renderLastFM() {
 
 // thanks max
 function renderStatus() {
-    const username = "ash"; // change the username!!!
-    const posts_url = "https://cafe.frizzbees.dev/get_posts/1?name=";
-    const profile_url = "https://social.nekoweb.org/profile/?view=";
-    const post_url = "https://social.nekoweb.org/post/?id=";
     (async () => {
         try {
             const request = await fetch(posts_url + username);
@@ -108,23 +117,20 @@ function renderStatus() {
     })();
 }
 
-var cssRoot = document.querySelector(":root");
-let theme;
-
 function checkTheme() {
     theme = localStorage.getItem("theme");
 
     if (theme == null) {
         if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-            setDark();
+            renderTheme("dark");
         } else {
-            setLight();
+            renderTheme("light");
         }
     } else {
         if (theme == "dark") {
-            setDark();
+            renderTheme("dark");
         } else {
-            setLight();
+            renderTheme("light");
         }
     }
 }
@@ -132,21 +138,23 @@ function checkTheme() {
 function setSavedTheme(input) {
     if (input == "dark") {
         localStorage.setItem("theme", "dark");
-        location.reload();
+        checkTheme();
     } else {
         localStorage.setItem("theme", "light");
-        location.reload();
+        checkTheme();
     }
 }
 
-function setLight() {
-    cssRoot.style.setProperty("--bkg-color", "#FFFFFF");
-    cssRoot.style.setProperty("--fnt-color", "#7f0000");
-    cssRoot.style.setProperty("--lnk-color", "#df0000");
-}
-
-function setDark() {
-    cssRoot.style.setProperty("--bkg-color", "#000000");
-    cssRoot.style.setProperty("--fnt-color", "#007f00");
-    cssRoot.style.setProperty("--lnk-color", "#00df00");
+function renderTheme(theme) {
+    if (theme == "dark") {
+        for (i = 0; i < items.length; i++) {
+            cssRoot.style.setProperty("--" + `${items[i]}` + "-color", `${darkColors[i]}`);
+        }
+    } else if (theme == "light") {
+        for (i = 0; i < items.length; i++) {
+            cssRoot.style.setProperty("--" + `${items[i]}` + "-color", `${lightColors[i]}`);
+        }
+    } else {
+        console.log("theme not defined!");
+    }
 }
