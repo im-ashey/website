@@ -9,6 +9,7 @@ function getButtons() {
 }
 
 function renderQuote() {
+    // nerd
     fetch("../assets/other/quotes.json")
         .then((response) => response.json())
         .then((data) => {
