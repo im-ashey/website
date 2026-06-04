@@ -1,0 +1,8 @@
+{
+  "devDependencies": {
+    "typescript": "^6.0.3"
+  },
+  "scripts": {
+    "build": "rm -rf public && mkdir public && cp -r src/css src/assets src/index.html src/404.html public && tsc"
+  }
+}
