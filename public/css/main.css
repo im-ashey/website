@@ -29,6 +29,10 @@ ul {
     padding: 0;
 }
 
+.linkicon {
+	height: 15px;
+}
+
 .lfmtext {
     float: right;
     width: 900px;
