@@ -1,6 +1,6 @@
 # 🏳️‍🌈 Opinionated Queer License v1.3
 
-© Copyright [~autumn](https://jackpurrin.moe)
+© Copyright [ash](https://ashey.me)
 
 ## Permissions
 
