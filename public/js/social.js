@@ -6,21 +6,20 @@ const post_url = "https://social.nekoweb.org/post/?id=";
 // thanks max
 (async () => {
     try {
-        const request = await fetch(posts_url + username,);
+        const request = await fetch(posts_url + username);
         let json = await request.json();
-        json = json[0]
+        json = json[0];
 
-        timestamp = json["timestamp"] * 1000
+        timestamp = json["timestamp"] * 1000;
         time = new Date(timestamp).toUTCString();
 
-        div = document.getElementById("nekocafe-status")
+        div = document.getElementById("nekocafe-status");
 
         div.innerHTML = `
             <p id="nekocafe-text"><a href="${post_url + json["id"]}">${json["post"]}</a></p>
             <p id="nekocafe-time">${time}</p>
-        ` // make sure the height on the img fits your page!!!
-
+        `; // make sure the height on the img fits your page!!!
     } catch (error) {
-        console.error(error)
+        console.error(error);
     }
 })();

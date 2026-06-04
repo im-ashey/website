@@ -2,9 +2,9 @@
 /* this adds in the anonymous pro nerd font cuz i like it */
 
 :root {
-	--bkg-color: #FFFFFF;
-	--fnt-color: #7f0000;
-	--lnk-color: #df0000;
-	--fnt: "Anonymous Pro", monospace;
-	--top-padding: 20px;
+    --bkg-color: #ffffff;
+    --fnt-color: #7f0000;
+    --lnk-color: #df0000;
+    --fnt: "Anonymous Pro", monospace;
+    --top-padding: 20px;
 }
