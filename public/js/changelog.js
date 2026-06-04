@@ -1,6 +1,6 @@
 // https://api.github.com/repos/im-ashey/website/commits
 
-function getXML() {
+function renderChanges() {
     const commitsDom = document.getElementById("commits");
 
     fetch("https://api.github.com/repos/im-ashey/website/commits")
