@@ -1,12 +1,15 @@
 const navDom = document.querySelectorAll("ul.nav")[0];
-const navButtons = navDom["children"]["length"];
-let buttonList = [];
+let navButtons: number = 0;
+if (navDom) {
+    navButtons = navDom["children"]["length"];
+}
+let buttonList: any[];
 
 const items = ["bkg", "fnt", "lnk"];
 const lightColors = ["#FFFFFF", "#7f0000", "#df0000"];
 const darkColors = ["#000000", "#007f00", "#00df00"];
 
-const cssRoot = document.querySelector(":root");
+const cssRoot: HTMLElement | null = document.querySelector(":root");
 
 const username = "ash"; // change the username!!!
 const posts_url = "https://cafe.frizzbees.dev/get_posts/1?name=";
@@ -15,8 +18,14 @@ const post_url = "https://social.nekoweb.org/post/?id=";
 
 function getButtons() {
     buttonList.length = 0;
-    for (i = 0; i < navButtons; i++) {
-        buttonList.push(navDom["children"][i]["firstChild"]["id"]);
+    for (let i = 0; i < navButtons; i++) {
+        if (buttonList) {
+            if (navDom && navDom["children"]) {
+                buttonList.push(navDom["children"][i]["firstChild"]["id"]);
+            }
+            
+        }
+        
     }
 }
 
@@ -26,34 +35,56 @@ function renderQuote() {
         .then((response) => response.json())
         .then((data) => {
             let quotenum = Math.floor(Math.random() * Object.keys(data).length);
+            const quoteDom: HTMLAnchorElement | null = document.getElementById("quote");
             if (data["quote." + quotenum]["url"]) {
-                document.getElementById("quote").outerHTML = "<a id='quote'>";
-                document.getElementById("quote").innerHTML =
-                    `"${data["quote." + quotenum]["content"]}" - ${data["quote." + quotenum]["author"]}`;
-                document.getElementById("quote").href = `${data["quote." + quotenum]["url"]}`;
+                if (quoteDom) {
+                    quoteDom.outerHTML = "<a id='quote'>";
+                    quoteDom.innerHTML =
+                        `"${data["quote." + quotenum]["content"]}" - ${data["quote." + quotenum]["author"]}`;
+                    quoteDom.href = `${data["quote." + quotenum]["url"]}`;
+                }
+
             } else {
-                document.getElementById("quote").innerHTML =
+                if (quoteDom) {
+                quoteDom.innerHTML =
                     `"${data["quote." + quotenum]["content"]}" - ${data["quote." + quotenum]["author"]}`;
+                }
             }
         })
         .catch((error) => console.error("something broke idk", error));
 }
 
-function renderPage(button) {
+function renderPage(button: string) {
     getButtons();
-
-    for (i = 0; i < buttonList.length; i++) {
-        document.getElementById(buttonList[i].slice(0, buttonList[i].indexOf("-button"))).hidden = true;
-    }
-
-    document.getElementById(button).hidden = false;
+    let pageID: HTMLElement | null
+    let buttomDom: HTMLElement | null
 
     for (let i = 0; i < buttonList.length; i++) {
-        document.getElementById(buttonList[i]).style.fontWeight = "normal";
-        document.getElementById(buttonList[i]).style.textDecoration = "none";
+        pageID = document.getElementById(buttonList[i].slice(0, buttonList[i].indexOf("-button")))
+        if (pageID) {
+            pageID.hidden = true;
+        }
     }
-    document.getElementById(button + "-button").style.fontWeight = "bold";
-    document.getElementById(button + "-button").style.textDecoration = "underline";
+    const pageDom = document.getElementById(button);
+
+    if (pageDom) {
+        pageDom.hidden = false;
+    }
+
+    for (let i = 0; i < buttonList.length; i++) {
+        buttomDom = document.getElementById(buttonList[i]);
+        if (buttomDom) {
+            buttomDom.style.fontWeight = "normal";
+            buttomDom.style.textDecoration = "none";
+        }
+
+    }
+    buttomDom = document.getElementById(button + "-button");
+    if (buttomDom) {
+        buttomDom.style.fontWeight = "bold";
+        buttomDom.style.textDecoration = "underline";
+    }
+
 }
 
 // https://api.github.com/repos/im-ashey/website/commits
@@ -65,7 +96,7 @@ function renderChangelog() {
         .then((response) => response.json())
         .then((data) => {
             console.log(data);
-            for (commitNum = 0; commitNum < 10; commitNum++) {
+            for (let commitNum = 0; commitNum < 10; commitNum++) {
                 const newHtml = `
                 <p>Author: ${data[commitNum]["commit"]["author"]["name"]}</p>
                 <p>Commit: ${data[commitNum]["commit"]["message"]}</p>
@@ -73,7 +104,9 @@ function renderChangelog() {
                 <p>SHA: ${data[commitNum]["sha"]}</p>
                 <hr />
             `;
+            if (commitsDom) {
                 commitsDom.insertAdjacentHTML("beforeend", newHtml);
+            }
             }
         });
 }
@@ -91,7 +124,11 @@ function renderLastFM() {
             const artist = data["recenttracks"]["track"][0]["artist"]["#text"];
             const album = data["recenttracks"]["track"][0]["album"]["#text"];
 
-            document.getElementById("lastfm").innerHTML = `"${name}" by "${artist}" on the "${album}" album.`;
+            const lastFMDOM = document.getElementById("lastfm");
+
+            if (lastFMDOM) {
+                lastFMDOM.innerHTML = `"${name}" by "${artist}" on the "${album}" album.`;
+            }
         })
         .catch((error) => console.error("something broke idk", error));
 }
@@ -104,15 +141,17 @@ function renderStatus() {
             let json = await request.json();
             json = json[0];
 
-            timestamp = json["timestamp"] * 1000;
-            time = new Date(timestamp).toUTCString();
+            const timestamp = json["timestamp"] * 1000;
+            const time = new Date(timestamp).toUTCString();
 
-            div = document.getElementById("nekocafe-status");
+            const div = document.getElementById("nekocafe-status");
 
-            div.innerHTML = `
-                <p id="nekocafe-text"><a href="${post_url + json["id"]}">${json["post"]}</a></p>
-                <p id="nekocafe-time">${time}</p>
-            `; // make sure the height on the img fits your page!!!
+            if (div) {
+                div.innerHTML = `
+                    <p id="nekocafe-text"><a href="${post_url + json["id"]}">${json["post"]}</a></p>
+                    <p id="nekocafe-time">${time}</p>
+                `; // make sure the height on the img fits your page!!!
+            }
         } catch (error) {
             console.error(error);
         }
@@ -120,7 +159,7 @@ function renderStatus() {
 }
 
 function checkTheme() {
-    theme = localStorage.getItem("theme");
+    const theme = localStorage.getItem("theme");
 
     if (theme == null) {
         if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
@@ -137,7 +176,7 @@ function checkTheme() {
     }
 }
 
-function setSavedTheme(input) {
+function setSavedTheme(input: string) {
     if (input == "dark") {
         localStorage.setItem("theme", "dark");
         checkTheme();
@@ -147,14 +186,18 @@ function setSavedTheme(input) {
     }
 }
 
-function renderTheme(theme) {
+function renderTheme(theme: string) {
     if (theme == "dark") {
-        for (i = 0; i < items.length; i++) {
-            cssRoot.style.setProperty("--" + `${items[i]}` + "-color", `${darkColors[i]}`);
+        for (let i = 0; i < items.length; i++) {
+            if (cssRoot) {
+                cssRoot.style.setProperty("--" + `${items[i]}` + "-color", `${darkColors[i]}`);
+            }
         }
     } else if (theme == "light") {
-        for (i = 0; i < items.length; i++) {
-            cssRoot.style.setProperty("--" + `${items[i]}` + "-color", `${lightColors[i]}`);
+        for (let i = 0; i < items.length; i++) {
+            if (cssRoot) {
+                cssRoot.style.setProperty("--" + `${items[i]}` + "-color", `${lightColors[i]}`);
+            }
         }
     } else {
         console.log("theme not defined!");
