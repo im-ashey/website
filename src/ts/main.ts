@@ -35,7 +35,7 @@ function renderQuote() {
         .then((response) => response.json())
         .then((data) => {
             let quotenum = Math.floor(Math.random() * Object.keys(data).length);
-            const quoteDom: HTMLAnchorElement | null = document.getElementById("quote");
+            const quoteDom: HTMLAnchorElement | null = document.querySelector("a#quote");
             if (data["quote." + quotenum]["url"]) {
                 if (quoteDom) {
                     quoteDom.outerHTML = "<a id='quote'>";
