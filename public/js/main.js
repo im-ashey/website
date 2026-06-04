@@ -1,4 +1,12 @@
-let buttons = ["home", "about", "music", "webrings", "changelog", "contact"];
+const navDom = document.querySelectorAll("ul.nav")[0];
+const navButtons = navDom['children']['length'];
+let buttonList = [];
+
+function getButtons() {
+    for (i = 0; i < navButtons; i++) {
+        buttonList.push(navDom['children'][i]['firstChild']['id'])
+    }
+}
 
 function renderQuote() {
     fetch("../assets/other/quotes.json")
@@ -24,11 +32,12 @@ function resizeIframe(obj) {
 }
 
 function changeFrame(page, button) {
+    getButtons();
 	if (button) {
 		document.getElementById("page").src = page;
-		for (let i = 0; i < buttons.length; i++) {
-        	document.getElementById(buttons[i]).style.fontWeight = "normal";
-        	document.getElementById(buttons[i]).style.textDecoration = "none";
+		for (let i = 0; i < buttonList.length; i++) {
+        	document.getElementById(buttonList[i]).style.fontWeight = "normal";
+        	document.getElementById(buttonList[i]).style.textDecoration = "none";
     	}
 		document.getElementById(button).style.fontWeight = "bold";
 		document.getElementById(button).style.textDecoration = "underline";
