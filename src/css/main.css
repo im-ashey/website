@@ -73,6 +73,11 @@ hr {
     overflow-y: clip;
 }
 
+#commits {
+    height: 200px;
+    overflow: scroll;
+}
+
 .item {
     display: flex;
     align-items: center;
