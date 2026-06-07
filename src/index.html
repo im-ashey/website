@@ -7,33 +7,23 @@
         <link rel="shortcut icon" href="assets/img/favicon.ico" />
         <link rel="stylesheet" href="css/main.css" />
         <script src="//kit.fontawesome.com/38208c653e.js" crossorigin="anonymous"></script>
+        <script src="js/main.js"></script>
+
     </head>
-    <body onload="checkTheme(); renderQuote(); renderPage('home')">
+    <body onload="renderFunStuff();">
         <main>
             <header>
                 <h1>ash's corner</h1>
                 <p id="quote"></p>
                 <hr />
             </header>
-            <nav id="nav">
-                <ul class="nav">
-                    <li><p id="home-button" onclick="renderPage('home')">home</p></li>
-                    <li><p id="about-button" onclick="renderStatus(); renderPage('about');">about</p></li>
-                    <li><p id="music-button" onclick="renderLastFM(); renderPage('music');">music</p></li>
-                    <li><p id="webrings-button" onclick="renderPage('webrings')">webrings</p></li>
-                    <li><p id="projects-button" onclick="renderPage('projects')">projects</p></li>
-                    <li><p id="changelog-button" onclick="renderChangelog(); renderPage('changelog');">changelog</p></li>
-                    <li><p id="contact-button" onclick="renderPage('contact')">contact</p></li>
-                </ul>
-            </nav>
             <img src="/assets/img/acandled.gif" class="pet" />
-            <section id="home" hidden>
+            <section id="home">
                 <h2>hiii</h2>
                 <p>welcome to my website on the internet!</p>
-                <p><strong>please remember, this website is in construction!</strong></p>
-                <p>the latest build is located at <a target="_parent" href="//dev.ashey.me">dev.ashey.me</a></p>
+                <p><strong>please remember, this website is always in construction!</strong></p>
+                <p>this pages uses some javascript to render fun things. the scripts being rendered are not malicous and you may audit them for yourselves on my <a href="//github.com/im-ashey/website">github</a>.</p>
                 <p>in the mean time, care to leave nice words in the <a href="//ashey.atabook.org">guestbook</a>?</p>
-                <p>or check out the <a target="_parent" href="//github.com/im-ashey/website">source code</a> and contribute something to this website?</p>
 
                 <ul class="themes">
                     <li onclick="setSavedTheme('dark')">dark theme</li>
@@ -42,14 +32,10 @@
 
                 <hr />
 
-                <h2>counters</h2>
-                <p>counters not loading? disable your adblocker to view them. it's nothing crazy, it's just fc2.com. it's all good if you don't wanna disable your adblocker.</p>
+                <h2>hit counts</h2>
+                <p>counters not loading? disable your adblocker to view them. it's nothing crazy, it's just goatcounter. it's all good if you don't wanna disable your adblocker, though.</p>
 
-                <h3>hit counts</h3>
-                <script language="javascript" type="text/javascript" src="//counter1.fc2.com/counter.php?id=40982088&main=1"></script>
-                <noscript><img src="//counter1.fc2.com/counter_img.php?id=40982088&main=1" /></noscript>
-                <h3>cheer!</h3>
-                <a target="_parent" href="//clap.fc2.com/post/ashey/?url=https%3A%2F%2Fashey.me" target="_blank" title="Web Clap by FC2"><img src="//clap.fc2.com/images/button/black/ashey?url=https%3A%2F%2Fashey.me&amp;lang=en" style="border: none" /></a>
+                <script data-goatcounter="https://ashey.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 
                 <hr />
 
@@ -71,7 +57,7 @@
 '`                     `'
                 </pre>
             </section>
-            <section id="about" hidden>
+            <section id="about">
                 <h2>about</h2>
                 <p>my name is jack, but i go by ash online. i don't know what i like better, but you can call me both.</p>
                 <p>pronouns are all over the place with me. i don't know them either. just use whatever you see fits for me :)</p>
@@ -81,9 +67,8 @@
 
                 <h3>status</h3>
                 <div id="nekocafe-status"></div>
-                <script src="/js/social.js"></script>
             </section>
-            <section id="music" hidden>
+            <section id="music">
                 <h2>music</h2>
                 <h3>my collection</h3>
                 <p>these are sorted by ranking. first, it's sorted by which artist is my favorite. then, it's the albums within the artists. italics are favorites, and non italics are just there because they're good.</p>
@@ -182,22 +167,22 @@
                 <p id="lastfm">did this load right?</p>
                 <p>check out my profile at <a href="https://www.last.fm/user/im-ash">https://www.last.fm/user/im-ash</a></p>
             </section>
-            <section id="webrings" hidden>
+            <section id="webrings">
                 <h2>webrings</h2>
                 <div class="webrings">
                     <map name="noaimini4">
-                        <a target="_parent" href="//baccyflap.com/noai" shape="rect" coords="22,3,63,27" target="_blank" title="no ai webring" />
-                        <a target="_parent" href="//baccyflap.com/noai/?prv&s=abl" target="_top" shape="poly" coords="0,15,10,5,18,5,18,25,10,25" title="previous" />
-                        <a target="_parent" href="//baccyflap.com/noai/?nxt&s=abl" target="_top" shape="poly" coords="87,15,77,5,69,5,69,25,77,25" title="next" />
+                        <a href="//baccyflap.com/noai" shape="rect" coords="22,3,63,27" target="_blank" title="no ai webring" />
+                        <a href="//baccyflap.com/noai/?prv&s=abl" target="_top" shape="poly" coords="0,15,10,5,18,5,18,25,10,25" title="previous" />
+                        <a href="//baccyflap.com/noai/?nxt&s=abl" target="_top" shape="poly" coords="87,15,77,5,69,5,69,25,77,25" title="next" />
                     </map>
                     <img usemap="#noaimini4" src="//baccyflap.com/noai/miniwidget4.gif" />
                     <div>
-                        <a target="_parent" href="//rewildtheweb.org/webring/">
+                        <a href="//rewildtheweb.org/webring/">
                             <img src="//rewildtheweb.org/webring-badge-pine-night.png" alt="rewild the web webring" width="88" height="31" />
                         </a>
                     </div>
-                    <a target="_parent" href="//webring.rewildtheweb.org/prev?from=ashey.me">&#8592; prev</a>
-                    <a target="_parent" href="//webring.rewildtheweb.org/next?from=ashey.me">next &#8594;</a>
+                    <a href="//webring.rewildtheweb.org/prev?from=ashey.me">&#8592; prev</a>
+                    <a href="//webring.rewildtheweb.org/next?from=ashey.me">next &#8594;</a>
                     <br />
                     <map name="webring">
                         <area alt="A previous track button" title="Previous!" href="//ring.acab.dev/prev/ec3b63a705" coords="12,26,34,43" shape="rect">
@@ -213,59 +198,60 @@
                 <ul>
                     <li>
                         <img class="linkicon" src="/assets/img/favicons/sofa.svg"/>
-                        <a target="_parent" href="//sofa.sh">sofa.sh</a>
+                        <a href="//sofa.sh">sofa.sh</a>
                     </li>
                     <li>
                         <img class="linkicon" src="/assets/img/favicons/sashley.jpg"/>
-                        <a target="_parent" href="//sashley.art">sashley</a>
+                        <a href="//sashley.art">sashley</a>
                     </li>
                     <li>
                         <label class="linkicon">🐾</label>
-                        <a target="_parent" href="//koiwypher.com">koiwypher</a>
+                        <a href="//koiwypher.com">koiwypher</a>
                     </li>
                 </ul>
             </section>
-            <section id="projects" hidden>
+            <section id="projects">
                 <h2>projects</h2>
                 <a href="https://i-love.dev/">FBLA state project</a>
                 <p>although this appears simple on the surface, it was quite a challenge to build. i eventaully powered through and got the project somewhat finished. i originally had wrote it in typescript, but when i moved to cloudflare for hosting it stopped working. i rewrote the <em>whole</em> project in js which made me go insane. unfortunelty, i did not get top 5 in the competition so i did not go to nationals, but state was fun so i'm not complaining.</p>
                 <hr />
                 <p>i'll fill this page out as i do more, epsecially with my cybersecurity stuff.</p>
             </section>
-            <section id="changelog" hidden>
+            <section id="changelog">
                 <h2>changelog</h2>
+                <p>does this not render? don't worry, there's always a changelog on my <a href="https://github.com/im-ashey/website/commits/main/">github</a></p>
                 <div id="commits"></div>
             </section>
-            <section id="contact" hidden>
+            <section id="contact">
                 <h2>links and stuff</h2>
                 <ul>
                     <li>
                         <i class="fa-brands fa-square-youtube"></i>
-                        <a target="_parent" href="//www.youtube.com/@imashey">youtube</a>
+                        <a href="//www.youtube.com/@imashey">youtube</a>
                     </li>
                     <li>
                         <i class="fa-brands fa-twitch"></i>
-                        <a target="_parent" href="//www.twitch.tv/imashey">twitch</a>
+                        <a href="//www.twitch.tv/imashey">twitch</a>
                     </li>
                     <li>
                         <i class="fa-brands fa-square-steam"></i>
-                        <a target="_parent" href="//steamcommunity.com/id/imashey/">steam</a>
+                        <a href="//steamcommunity.com/id/imashey/">steam</a>
                     </li>
                     <li>
                         <i class="fa-brands fa-square-lastfm"></i>
-                        <a target="_parent" href="//www.last.fm/user/im-ash">last.fm</a>
+                        <a href="//www.last.fm/user/im-ash">last.fm</a>
                     </li>
                     <li>
                         <i class="fa-brands fa-bandcamp"></i>
-                        <a target="_parent" href="//bandcamp.com/im-ash">bandcamp</a>
+                        <a href="//bandcamp.com/im-ash">bandcamp</a>
                     </li>
                     <li>
                         <i class="fa-brands fa-square-github"></i>
-                        <a target="_parent" href="//github.com/im-ashey">github</a>
+                        <a href="//github.com/im-ashey">github</a>
                     </li>
                     <li>
                         <i class="fa-brands fa-goodreads"></i>
-                        <a target="_parent" href="//hardcover.app/@im.ash">hardcover</a>
+                        <a href="//hardcover.app/@im.ash">hardcover</a>
                     </li>
                 </ul>
 
@@ -276,19 +262,19 @@
                 <ul>
                     <li>
                         <i class="fa-solid fa-key"></i>
-                        <a target="_parent" href="/assets/keys/public.asc">my GPG key</a>
+                        <a href="/assets/keys/public.asc">my GPG key</a>
                     </li>
                     <li>
                         <i class="fa-brands fa-signal-messenger"></i>
-                        <a target="_parent" href="//signal.me/#eu/1mzcafa2UP_riMs20rBh6FnWmPqkBV7-sEu-JngWnPwCmHC1YR1PqIbISnvlJLeI">signal (ash.1792)</a>
+                        <a href="//signal.me/#eu/1mzcafa2UP_riMs20rBh6FnWmPqkBV7-sEu-JngWnPwCmHC1YR1PqIbISnvlJLeI">signal (ash.1792)</a>
                     </li>
                     <li>
                         <i class="fa-solid fa-envelope"></i>
-                        <a target="_parent" href="mailto:ash@ashey.me">ash@ashey.me</a>
+                        <a href="mailto:ash@ashey.me">ash@ashey.me</a>
                     </li>
                     <li>
                         <i class="fa-brands fa-discord"></i>
-                        <a target="_parent" href="//discord.gg/wWbrCUPX7x">discord (im.ashey)</a>
+                        <a href="//discord.gg/wWbrCUPX7x">discord (im.ashey)</a>
                     </li>
                 </ul>
 
@@ -299,6 +285,5 @@
 
             </section>
         </main>
-    <script src="js/main.js"></script>
     </body>
 </html>
