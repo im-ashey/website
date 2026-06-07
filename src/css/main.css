@@ -42,10 +42,6 @@ hr {
     border: 0.5px var(--fnt-color) dotted;
 }
 
-#nekocafe-status {
-    height: 100px;
-}
-
 .nav,
 .themes {
     display: flex;
