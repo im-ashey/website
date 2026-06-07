@@ -7,27 +7,18 @@
         <link rel="shortcut icon" href="assets/img/favicon.ico" />
         <link rel="stylesheet" href="css/main.css" />
         <script src="//kit.fontawesome.com/38208c653e.js" crossorigin="anonymous"></script>
+        <script src="js/main.js"></script>
+
     </head>
-    <body onload="checkTheme(); renderQuote(); renderPage('home')">
+    <body onload="renderFunStuff();">
         <main>
             <header>
                 <h1>ash's corner</h1>
                 <p id="quote"></p>
                 <hr />
             </header>
-            <nav id="nav">
-                <ul class="nav">
-                    <li><p id="home-button" onclick="renderPage('home')">home</p></li>
-                    <li><p id="about-button" onclick="renderStatus(); renderPage('about');">about</p></li>
-                    <li><p id="music-button" onclick="renderLastFM(); renderPage('music');">music</p></li>
-                    <li><p id="webrings-button" onclick="renderPage('webrings')">webrings</p></li>
-                    <li><p id="projects-button" onclick="renderPage('projects')">projects</p></li>
-                    <li><p id="changelog-button" onclick="renderChangelog(); renderPage('changelog');">changelog</p></li>
-                    <li><p id="contact-button" onclick="renderPage('contact')">contact</p></li>
-                </ul>
-            </nav>
             <img src="/assets/img/acandled.gif" class="pet" />
-            <section id="home" hidden>
+            <section id="home">
                 <h2>hiii</h2>
                 <p>welcome to my website on the internet!</p>
                 <p><strong>please remember, this website is in construction!</strong></p>
@@ -71,7 +62,7 @@
 '`                     `'
                 </pre>
             </section>
-            <section id="about" hidden>
+            <section id="about">
                 <h2>about</h2>
                 <p>my name is jack, but i go by ash online. i don't know what i like better, but you can call me both.</p>
                 <p>pronouns are all over the place with me. i don't know them either. just use whatever you see fits for me :)</p>
@@ -81,9 +72,8 @@
 
                 <h3>status</h3>
                 <div id="nekocafe-status"></div>
-                <script src="/js/social.js"></script>
             </section>
-            <section id="music" hidden>
+            <section id="music">
                 <h2>music</h2>
                 <h3>my collection</h3>
                 <p>these are sorted by ranking. first, it's sorted by which artist is my favorite. then, it's the albums within the artists. italics are favorites, and non italics are just there because they're good.</p>
@@ -182,7 +172,7 @@
                 <p id="lastfm">did this load right?</p>
                 <p>check out my profile at <a href="https://www.last.fm/user/im-ash">https://www.last.fm/user/im-ash</a></p>
             </section>
-            <section id="webrings" hidden>
+            <section id="webrings">
                 <h2>webrings</h2>
                 <div class="webrings">
                     <map name="noaimini4">
@@ -225,18 +215,18 @@
                     </li>
                 </ul>
             </section>
-            <section id="projects" hidden>
+            <section id="projects">
                 <h2>projects</h2>
                 <a href="https://i-love.dev/">FBLA state project</a>
                 <p>although this appears simple on the surface, it was quite a challenge to build. i eventaully powered through and got the project somewhat finished. i originally had wrote it in typescript, but when i moved to cloudflare for hosting it stopped working. i rewrote the <em>whole</em> project in js which made me go insane. unfortunelty, i did not get top 5 in the competition so i did not go to nationals, but state was fun so i'm not complaining.</p>
                 <hr />
                 <p>i'll fill this page out as i do more, epsecially with my cybersecurity stuff.</p>
             </section>
-            <section id="changelog" hidden>
+            <section id="changelog">
                 <h2>changelog</h2>
                 <div id="commits"></div>
             </section>
-            <section id="contact" hidden>
+            <section id="contact">
                 <h2>links and stuff</h2>
                 <ul>
                     <li>
@@ -299,6 +289,5 @@
 
             </section>
         </main>
-    <script src="js/main.js"></script>
     </body>
 </html>
