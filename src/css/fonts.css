@@ -7,6 +7,11 @@
 html {
     color: var(--fnt-color);
     font-family: var(--fnt);
+    font-weight: 350;
+}
+
+a {
+    color: var(--lnk-color);
 }
 
 h1,
