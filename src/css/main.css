@@ -10,14 +10,6 @@ main {
     width: 40%;
 }
 
-a {
-    color: var(--lnk-color);
-}
-
-
-
-
-
 hr {
     margin-top: 20px;
     border: 0.5px var(--fnt-color) dotted;
@@ -37,11 +29,6 @@ hr {
     display: flex;
     overflow-x: scroll;
     overflow-y: clip;
-}
-
-#commits {
-    height: 200px;
-    overflow: scroll;
 }
 
 .item {
