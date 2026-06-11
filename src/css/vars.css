@@ -1,7 +1,13 @@
 :root {
-    --bkg-color: #000000;
-    --fnt-color: #007f00;
-    --lnk-color: #00df00;
     --fnt: "Anonymous Pro", monospace;
     --top-padding: 20px;
+    --bkg-color: #FFFFFF;
+    --fnt-color: #7f0000;
+    --lnk-color: #df0000;
+
+    @media (prefers-color-scheme: dark) {
+        --bkg-color: #000000;
+        --fnt-color: #007f00;
+        --lnk-color: #00df00;
+    }
 }
