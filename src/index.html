@@ -15,16 +15,31 @@
             <header>
                 <h1>ash's corner</h1>
                 <p id="quote">"${data["quote." + quotenum]["content"]}" - ${data["quote." + quotenum]["author"]}</p>
+                <nav class="nav">
+                    <ul class="nav">
+                        <li><a href="pages/about.html">about</a></li>
+                        <li><a href="pages/music.html">music</a></li>
+                        <li><a href="pages/contact.html">links and stuff</a></li>
+                        <li><a href="pages/changelog.html">changelog</a></li>
+                    </ul>
+                </nav>
                 <hr />
             </header>
+
             <img src="/assets/img/acandled.gif" class="pet" />
             <section id="home">
                 <section id="welcome">
                     <h2>hiii</h2>
                     <p>welcome to my website on the internet!</p>
                     <p><strong>please remember, this website is always in construction!</strong></p>
-                    <p>this pages uses some javascript to render fun things. the scripts being rendered are not malicous and you may audit them for yourselves on my <a href="//github.com/im-ashey/website">github</a>.</p>
-                    <p>in the mean time, care to leave nice words in the <a href="//ashey.atabook.org">guestbook</a>?</p>
+                    <p>
+                        this pages uses some javascript to render fun things. the scripts being rendered are not
+                        malicous and you may audit them for yourselves on my
+                        <a href="//github.com/im-ashey/website">github</a>.
+                    </p>
+                    <p>
+                        in the mean time, care to leave nice words in the <a href="//ashey.atabook.org">guestbook</a>?
+                    </p>
 
                     <ul class="themes">
                         <li onclick="setSavedTheme('dark')">dark theme</li>
@@ -35,7 +50,10 @@
                 <section id="hits">
                     <h2>hit counts</h2>
                     <p id="count">this website has been visited ${hitCount} times</p>
-                    <p>counter not loading? disable your adblocker to view them. it's nothing crazy, it's just goatcounter. it's all good if you don't wanna disable your adblocker, though.</p>
+                    <p>
+                        counter not loading? disable your adblocker to view them. it's nothing crazy, it's just
+                        goatcounter. it's all good if you don't wanna disable your adblocker, though.
+                    </p>
                 </section>
                 <hr />
                 <section id="poll">
@@ -43,18 +61,36 @@
                     <form method="post" action="https://poll.pollcode.com/43359966">
                         <div>
                             <div>
-                                <p>is it morally wrong to make money off of dead people as a multi-million dollar company?</p>
+                                <p>
+                                    is it morally wrong to make money off of dead people as a multi-million dollar
+                                    company?
+                                </p>
                             </div>
-                            <input type="radio" name="answer" value="1" id="answer433599661" /><label for="answer433599661">yes</label>
+                            <input type="radio" name="answer" value="1" id="answer433599661" /><label
+                                for="answer433599661"
+                                >yes</label
+                            >
                             <br />
-                            <input type="radio" name="answer" value="2" id="answer433599662" /><label for="answer433599662">no</label>
+                            <input type="radio" name="answer" value="2" id="answer433599662" /><label
+                                for="answer433599662"
+                                >no</label
+                            >
                             <br />
-                            <input type="radio" name="answer" value="3" id="answer433599663" /><label for="answer433599663">depends</label>
+                            <input type="radio" name="answer" value="3" id="answer433599663" /><label
+                                for="answer433599663"
+                                >depends</label
+                            >
                             <div>
                                 <br />
-                                <input type="submit" value=" Vote " />&nbsp;<input type="submit" name="view" value=" View " />
+                                <input type="submit" value=" Vote " />&nbsp;<input
+                                    type="submit"
+                                    name="view"
+                                    value=" View "
+                                />
                             </div>
-                            <div><p>pollcode.com <a href="https://pollcode.com/">free polls</a></p></div>
+                            <div>
+                                <p>pollcode.com <a href="https://pollcode.com/">free polls</a></p>
+                            </div>
                         </div>
                     </form>
                 </section>
@@ -64,36 +100,86 @@
                 <h2>webrings</h2>
                 <div class="webrings">
                     <map name="noaimini4">
-                        <a href="//baccyflap.com/noai" shape="rect" coords="22,3,63,27" target="_blank" title="no ai webring" />
-                        <a href="//baccyflap.com/noai/?prv&s=abl" target="_top" shape="poly" coords="0,15,10,5,18,5,18,25,10,25" title="previous" />
-                        <a href="//baccyflap.com/noai/?nxt&s=abl" target="_top" shape="poly" coords="87,15,77,5,69,5,69,25,77,25" title="next" />
+                        <a
+                            href="//baccyflap.com/noai"
+                            shape="rect"
+                            coords="22,3,63,27"
+                            target="_blank"
+                            title="no ai webring"
+                        />
+                        <a
+                            href="//baccyflap.com/noai/?prv&s=abl"
+                            target="_top"
+                            shape="poly"
+                            coords="0,15,10,5,18,5,18,25,10,25"
+                            title="previous"
+                        />
+                        <a
+                            href="//baccyflap.com/noai/?nxt&s=abl"
+                            target="_top"
+                            shape="poly"
+                            coords="87,15,77,5,69,5,69,25,77,25"
+                            title="next"
+                        />
                     </map>
                     <img usemap="#noaimini4" src="//baccyflap.com/noai/miniwidget4.gif" />
                     <div>
                         <a href="//rewildtheweb.org/webring/">
-                            <img src="//rewildtheweb.org/webring-badge-pine-night.png" alt="rewild the web webring" width="88" height="31" />
+                            <img
+                                src="//rewildtheweb.org/webring-badge-pine-night.png"
+                                alt="rewild the web webring"
+                                width="88"
+                                height="31"
+                            />
                         </a>
                     </div>
                     <a href="//webring.rewildtheweb.org/prev?from=ashey.me">&#8592; prev</a>
                     <a href="//webring.rewildtheweb.org/next?from=ashey.me">next &#8594;</a>
                     <br />
                     <map name="webring">
-                        <area alt="A previous track button" title="Previous!" href="//ring.acab.dev/prev/ec3b63a705" coords="12,26,34,43" shape="rect">
-                        <area alt="A shuffle button!" title="Surprise me~" href="//ring.acab.dev/rand/ec3b63a705" coords="37,26,59,43" shape="rect">
-                        <area alt="A next track button" title="Next!"  href="//ring.acab.dev/next/ec3b63a705" coords="62,26,84,43" shape="rect">
-                        <area alt="A glider!" title="So, what is this webring thing about again?" href="//ring.acab.dev/" coords="88,25,108,45" shape="rect">
+                        <area
+                            alt="A previous track button"
+                            title="Previous!"
+                            href="//ring.acab.dev/prev/ec3b63a705"
+                            coords="12,26,34,43"
+                            shape="rect"
+                        />
+                        <area
+                            alt="A shuffle button!"
+                            title="Surprise me~"
+                            href="//ring.acab.dev/rand/ec3b63a705"
+                            coords="37,26,59,43"
+                            shape="rect"
+                        />
+                        <area
+                            alt="A next track button"
+                            title="Next!"
+                            href="//ring.acab.dev/next/ec3b63a705"
+                            coords="62,26,84,43"
+                            shape="rect"
+                        />
+                        <area
+                            alt="A glider!"
+                            title="So, what is this webring thing about again?"
+                            href="//ring.acab.dev/"
+                            coords="88,25,108,45"
+                            shape="rect"
+                        />
                     </map>
-                    <img usemap="#webring" src="//ring.acab.dev/img/webring.gif">
-                    <script src="https://hiddensource.riparia-studio.com/js/hsc.js" img="(optional: 88x31 image url)" ></script>
+                    <img usemap="#webring" src="//ring.acab.dev/img/webring.gif" />
+                    <script
+                        src="https://hiddensource.riparia-studio.com/js/hsc.js"
+                        img="(optional: 88x31 image url)"
+                    ></script>
                 </div>
                 <h3>cool websites and people</h3>
                 <ul>
                     <li>
-                        <img class="linkicon" src="/assets/img/favicons/sofa.svg"/>
+                        <img class="linkicon" src="/assets/img/favicons/sofa.svg" />
                         <a href="//sofa.sh">sofa.sh</a>
                     </li>
                     <li>
-                        <img class="linkicon" src="/assets/img/favicons/sashley.jpg"/>
+                        <img class="linkicon" src="/assets/img/favicons/sashley.jpg" />
                         <a href="//sashley.art">sashley</a>
                     </li>
                     <li>
