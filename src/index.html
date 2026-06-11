@@ -6,24 +6,40 @@
         <meta charset="utf-8" />
         <link rel="shortcut icon" href="assets/img/favicon.ico" />
         <link rel="stylesheet" href="css/main.css" />
-        <script src="js/main.js"></script>
+        <script src="js/main.js" defer></script>
+        <script src="js/themes.js" defer></script>
         <script data-goatcounter="https://stats.ashey.me/count" async src="//gc.zgo.at/count.js"></script>
     </head>
-    <body onload="renderFunStuff();">
+    <body onload="renderFunStuff(); checkTheme()">
         <main>
             <header>
                 <h1>ash's corner</h1>
                 <p id="quote">"${data["quote." + quotenum]["content"]}" - ${data["quote." + quotenum]["author"]}</p>
+                <nav class="nav">
+                    <ul class="nav">
+                        <li><a href="pages/about.html">about</a></li>
+                        <li><a href="pages/music.html">music</a></li>
+                        <li><a href="pages/contact.html">links and stuff</a></li>
+                        <li><a href="pages/changelog.html">changelog</a></li>
+                    </ul>
+                </nav>
                 <hr />
             </header>
+
             <img src="/assets/img/acandled.gif" class="pet" />
             <section id="home">
                 <section id="welcome">
                     <h2>hiii</h2>
                     <p>welcome to my website on the internet!</p>
                     <p><strong>please remember, this website is always in construction!</strong></p>
-                    <p>this pages uses some javascript to render fun things. the scripts being rendered are not malicous and you may audit them for yourselves on my <a href="//github.com/im-ashey/website">github</a>.</p>
-                    <p>in the mean time, care to leave nice words in the <a href="//ashey.atabook.org">guestbook</a>?</p>
+                    <p>
+                        this pages uses some javascript to render fun things. the scripts being rendered are not
+                        malicous and you may audit them for yourselves on my
+                        <a href="//github.com/im-ashey/website">github</a>.
+                    </p>
+                    <p>
+                        in the mean time, care to leave nice words in the <a href="//ashey.atabook.org">guestbook</a>?
+                    </p>
 
                     <ul class="themes">
                         <li onclick="setSavedTheme('dark')">dark theme</li>
@@ -34,7 +50,10 @@
                 <section id="hits">
                     <h2>hit counts</h2>
                     <p id="count">this website has been visited ${hitCount} times</p>
-                    <p>counter not loading? disable your adblocker to view them. it's nothing crazy, it's just goatcounter. it's all good if you don't wanna disable your adblocker, though.</p>
+                    <p>
+                        counter not loading? disable your adblocker to view them. it's nothing crazy, it's just
+                        goatcounter. it's all good if you don't wanna disable your adblocker, though.
+                    </p>
                 </section>
                 <hr />
                 <section id="poll">
@@ -42,194 +61,125 @@
                     <form method="post" action="https://poll.pollcode.com/43359966">
                         <div>
                             <div>
-                                <p>is it morally wrong to make money off of dead people as a multi-million dollar company?</p>
+                                <p>
+                                    is it morally wrong to make money off of dead people as a multi-million dollar
+                                    company?
+                                </p>
                             </div>
-                            <input type="radio" name="answer" value="1" id="answer433599661" /><label for="answer433599661">yes</label>
+                            <input type="radio" name="answer" value="1" id="answer433599661" /><label
+                                for="answer433599661"
+                                >yes</label
+                            >
                             <br />
-                            <input type="radio" name="answer" value="2" id="answer433599662" /><label for="answer433599662">no</label>
+                            <input type="radio" name="answer" value="2" id="answer433599662" /><label
+                                for="answer433599662"
+                                >no</label
+                            >
                             <br />
-                            <input type="radio" name="answer" value="3" id="answer433599663" /><label for="answer433599663">depends</label>
+                            <input type="radio" name="answer" value="3" id="answer433599663" /><label
+                                for="answer433599663"
+                                >depends</label
+                            >
                             <div>
                                 <br />
-                                <input type="submit" value=" Vote " />&nbsp;<input type="submit" name="view" value=" View " />
+                                <input type="submit" value=" Vote " />&nbsp;<input
+                                    type="submit"
+                                    name="view"
+                                    value=" View "
+                                />
                             </div>
-                            <div><p>pollcode.com <a href="https://pollcode.com/">free polls</a></p></div>
+                            <div>
+                                <p>pollcode.com <a href="https://pollcode.com/">free polls</a></p>
+                            </div>
                         </div>
                     </form>
                 </section>
-            </section>
-            <hr />
-            <section id="about">
-                <h2>about</h2>
-                <p>my name is jack, but i go by ash online. i don't know what i like better, but you can call me both.</p>
-                <p>pronouns are all over the place with me. i don't know them either. just use whatever you see fits for me :)</p>
-                <p>i'm passionate about cybersecurity, i like to code, and i love to play the guitar.</p>
-                <p>i'm also currently in high school, and also attending a psuedo trade school for cybersecurity. it's cool shit and i've been having a great time. i've never been in a class where i can do things that i'm passoniate about. i've been close with computer science but not close enough. i did enjoy my computer science though because of my all time favorite teacher. thanks for giving me a great year teach :)</p>
-                <p>i'll add more to this page later when i have the energy.</p>
-                <h3>status</h3>
-                <div id="nekocafe-status">${json["post"]}</div>
-
-                <h3>projects</h3>
-                <a href="https://i-love.dev/">FBLA state project</a>
-                <p>although this appears simple on the surface, it was quite a challenge to build. i eventaully powered through and got the project somewhat finished. i originally had wrote it in typescript, but when i moved to cloudflare for hosting it stopped working. i rewrote the <em>whole</em> project in js which made me go insane. unfortunelty, i did not get top 5 in the competition so i did not go to nationals, but state was fun so i'm not complaining.</p>
-                <p>i'll fill this page out as i do more, epsecially with my cybersecurity stuff.</p>
-                <a href="https://startpage.ashey.me/">startpage</a>
-                <p>i really like the bonjourr start page extension. it's really nice! i was looking for a project to do and i went to open a new tab page and right before i searched for projects, the project stared back at me.</p>
-                <p>this isn't a 100% clone of my bonjourr page, but it's really damn close and i like it so it's good enough! i'll add in a few more things here and there as time goes by but yeah, it's pretty much a nice looking new tab page for myself :)</p>
-
-                <h3>made with</h3>
-                <pre>
-❯ hyfetch
-            '                ash@ashey.me
-           'A'               ---------------
-          'ooo'              OS: Artix Linux
-         'ookxo'             Host: ThinkPad 490s
-         `ookxxo'            Kernel: linux-zen
-       '.   `ooko'           Editor: vim
-      'ooo`.   `oo'          DE: KDE Plasma
-     'ooxxxoo`.   `'         Terminal: alacritty
-    'ookxxxkooo.`   .        CPU: Intel Core i7-8665U
-   'ookxxkoo'`   .'oo'       GPU: Intel UHD Graphics 620
-  'ooxoo'`     .:ooxxo'      Memory: 14.90GiB
- 'io'`             `'oo'
-'`                     `'
-                </pre>
-            </section>
-            <hr />
-            <section id="music">
-                <h2>music</h2>
-                <h3>my collection</h3>
-                <p>these are sorted by ranking. first, it's sorted by which artist is my favorite. then, it's the albums within the artists. italics are favorites, and non italics are just there because they're good.</p>
-                <div class="gallery">
-                    <div class="item">
-                        <img class="cover" src="/assets/img/covers/2.webp" />
-                        <p class="text favorite">2 - Mac DeMarco</p>
-                    </div>
-                    <div class="item">
-                        <img class="cover" src="/assets/img/covers/sd.webp" />
-                        <p class="text favorite">Salad Days - Mac DeMarco</p>
-                    </div>
-                    <div class="item">
-                        <img class="cover" src="/assets/img/covers/tod.webp" />
-                        <p class="text favorite">This Old Dog - Mac DeMarco</p>
-                    </div>
-                    <div class="item">
-                        <img class="cover" src="/assets/img/covers/rarnc.webp" />
-                        <p class="text favorite">Rock and Roll Night Club - Mac DeMarco</p>
-                    </div>
-                    <div class="item">
-                        <img class="cover" src="/assets/img/covers/ao.webp" />
-                        <p class="text favorite">Another One - Mac DeMarco</p>
-                    </div>
-                    <div class="item">
-                        <img class="cover" src="/assets/img/covers/hctc.webp" />
-                        <p class="text">Here Comes the Cowboy - Mac DeMarco</p>
-                    </div>
-                    <div class="item">
-                        <img class="cover" src="/assets/img/covers/g.webp" />
-                        <p class="text">Guitar - Mac DeMarco</p>
-                    </div>
-                    <div class="item">
-                        <img class="cover" src="/assets/img/covers/ohms.webp" />
-                        <p class="text favorite">Ohms - Deftones</p>
-                    </div>
-                    <div class="item">
-                        <img class="cover" src="/assets/img/covers/snw.webp" />
-                        <p class="text favorite">Saturday Night Wrist - Deftones</p>
-                    </div>
-                    <div class="item">
-                        <img class="cover" src="/assets/img/covers/dtones.webp" />
-                        <p class="text favorite">Deftones</p>
-                    </div>
-                    <div class="item">
-                        <img class="cover" src="/assets/img/covers/atf.webp" />
-                        <p class="text">Around The Fur - Deftones</p>
-                    </div>
-                    <div class="item">
-                        <img class="cover" src="/assets/img/covers/wp.webp" />
-                        <p class="text">White Pony - Deftones</p>
-                    </div>
-                    <div class="item">
-                        <img class="cover" src="/assets/img/covers/de.webp" />
-                        <p class="text">Diamond Eyes - Deftones</p>
-                    </div>
-                    <div class="item">
-                        <img class="cover" src="/assets/img/covers/ypaa.webp" />
-                        <p class="text favorite">You'd Prefer an Astronaut - Hum</p>
-                    </div>
-                    <div class="item">
-                        <img class="cover" src="/assets/img/covers/sdd.webp" />
-                        <p class="text favorite">Snailcore Delücks - Gezebelle Gaburgably</p>
-                    </div>
-                    <div class="item">
-                        <img class="cover" src="/assets/img/covers/l.webp" />
-                        <p class="text favorite">Lateralus - TOOL</p>
-                    </div>
-                    <div class="item">
-                        <img class="cover" src="/assets/img/covers/u.webp" />
-                        <p class="text favorite">Undertow - TOOL</p>
-                    </div>
-                    <div class="item">
-                        <img class="cover" src="/assets/img/covers/Æ.webp" />
-                        <p class="text favorite">Ænima - TOOL</p>
-                    </div>
-                    <div class="item">
-                        <img class="cover" src="/assets/img/covers/am.webp" />
-                        <p class="text">AM - Arctic Monkeys</p>
-                    </div>
-                    <div class="item">
-                        <img class="cover" src="/assets/img/covers/fwn.webp" />
-                        <p class="text favorite">Favourite Worst Nightmare - Arctic Monkeys</p>
-                    </div>
-                    <div class="item">
-                        <img class="cover" src="/assets/img/covers/wba.webp" />
-                        <p class="text favorite">Weezer (Blue Album) - Weezer</p>
-                    </div>
-                    <div class="item">
-                        <img class="cover" src="/assets/img/covers/fg.webp" />
-                        <p class="text">Floral Green - Title Fight</p>
-                    </div>
-                </div>
-                <h3>last.fm</h3>
-                <p>here's the last thing that was scrobbled to my last.fm!</p>
-                <p id="lastfm">"${name}" by "${artist}" on the "${album}" album.</p>
-                <p>check out my profile at <a href="https://www.last.fm/user/im-ash">https://www.last.fm/user/im-ash</a></p>
             </section>
             <hr />
             <section id="webrings">
                 <h2>webrings</h2>
                 <div class="webrings">
                     <map name="noaimini4">
-                        <a href="//baccyflap.com/noai" shape="rect" coords="22,3,63,27" target="_blank" title="no ai webring" />
-                        <a href="//baccyflap.com/noai/?prv&s=abl" target="_top" shape="poly" coords="0,15,10,5,18,5,18,25,10,25" title="previous" />
-                        <a href="//baccyflap.com/noai/?nxt&s=abl" target="_top" shape="poly" coords="87,15,77,5,69,5,69,25,77,25" title="next" />
+                        <a
+                            href="//baccyflap.com/noai"
+                            shape="rect"
+                            coords="22,3,63,27"
+                            target="_blank"
+                            title="no ai webring"
+                        />
+                        <a
+                            href="//baccyflap.com/noai/?prv&s=abl"
+                            target="_top"
+                            shape="poly"
+                            coords="0,15,10,5,18,5,18,25,10,25"
+                            title="previous"
+                        />
+                        <a
+                            href="//baccyflap.com/noai/?nxt&s=abl"
+                            target="_top"
+                            shape="poly"
+                            coords="87,15,77,5,69,5,69,25,77,25"
+                            title="next"
+                        />
                     </map>
                     <img usemap="#noaimini4" src="//baccyflap.com/noai/miniwidget4.gif" />
                     <div>
                         <a href="//rewildtheweb.org/webring/">
-                            <img src="//rewildtheweb.org/webring-badge-pine-night.png" alt="rewild the web webring" width="88" height="31" />
+                            <img
+                                src="//rewildtheweb.org/webring-badge-pine-night.png"
+                                alt="rewild the web webring"
+                                width="88"
+                                height="31"
+                            />
                         </a>
                     </div>
                     <a href="//webring.rewildtheweb.org/prev?from=ashey.me">&#8592; prev</a>
                     <a href="//webring.rewildtheweb.org/next?from=ashey.me">next &#8594;</a>
                     <br />
                     <map name="webring">
-                        <area alt="A previous track button" title="Previous!" href="//ring.acab.dev/prev/ec3b63a705" coords="12,26,34,43" shape="rect">
-                        <area alt="A shuffle button!" title="Surprise me~" href="//ring.acab.dev/rand/ec3b63a705" coords="37,26,59,43" shape="rect">
-                        <area alt="A next track button" title="Next!"  href="//ring.acab.dev/next/ec3b63a705" coords="62,26,84,43" shape="rect">
-                        <area alt="A glider!" title="So, what is this webring thing about again?" href="//ring.acab.dev/" coords="88,25,108,45" shape="rect">
+                        <area
+                            alt="A previous track button"
+                            title="Previous!"
+                            href="//ring.acab.dev/prev/ec3b63a705"
+                            coords="12,26,34,43"
+                            shape="rect"
+                        />
+                        <area
+                            alt="A shuffle button!"
+                            title="Surprise me~"
+                            href="//ring.acab.dev/rand/ec3b63a705"
+                            coords="37,26,59,43"
+                            shape="rect"
+                        />
+                        <area
+                            alt="A next track button"
+                            title="Next!"
+                            href="//ring.acab.dev/next/ec3b63a705"
+                            coords="62,26,84,43"
+                            shape="rect"
+                        />
+                        <area
+                            alt="A glider!"
+                            title="So, what is this webring thing about again?"
+                            href="//ring.acab.dev/"
+                            coords="88,25,108,45"
+                            shape="rect"
+                        />
                     </map>
-                    <img usemap="#webring" src="//ring.acab.dev/img/webring.gif">
-                    <script src="https://hiddensource.riparia-studio.com/js/hsc.js" img="(optional: 88x31 image url)" ></script>
+                    <img usemap="#webring" src="//ring.acab.dev/img/webring.gif" />
+                    <script
+                        src="https://hiddensource.riparia-studio.com/js/hsc.js"
+                        img="(optional: 88x31 image url)"
+                    ></script>
                 </div>
                 <h3>cool websites and people</h3>
                 <ul>
                     <li>
-                        <img class="linkicon" src="/assets/img/favicons/sofa.svg"/>
+                        <img class="linkicon" src="/assets/img/favicons/sofa.svg" />
                         <a href="//sofa.sh">sofa.sh</a>
                     </li>
                     <li>
-                        <img class="linkicon" src="/assets/img/favicons/sashley.jpg"/>
+                        <img class="linkicon" src="/assets/img/favicons/sashley.jpg" />
                         <a href="//sashley.art">sashley</a>
                     </li>
                     <li>
@@ -245,60 +195,6 @@
                         <a href="//eyeorb.net/main.html">eyeorb</a>
                     </li>
                 </ul>
-            </section>
-            <hr />
-            <section id="contact">
-                <h2>links and stuff</h2>
-                <ul>
-                    <li>
-                        <a href="//www.youtube.com/@imashey">youtube</a>
-                    </li>
-                    <li>
-                        <a href="//www.twitch.tv/imashey">twitch</a>
-                    </li>
-                    <li>
-                        <a href="//steamcommunity.com/id/imashey/">steam</a>
-                    </li>
-                    <li>
-                        <a href="//www.last.fm/user/im-ash">last.fm</a>
-                    </li>
-                    <li>
-                        <a href="//bandcamp.com/im-ash">bandcamp</a>
-                    </li>
-                    <li>
-                        <a href="//github.com/im-ashey">github</a>
-                    </li>
-                    <li>
-                        <a href="//hardcover.app/@im.ash">hardcover</a>
-                    </li>
-                </ul>
-
-                <h3>contact</h3>
-                <p>when you can, please use my GPG key with email and discord.</p>
-                <p>you should also use the things in the order listed. use the one on the bottom the least and the ones on top the most.</p>
-                <p><strong>hey!</strong> i’m really bad at conveying tone over text sometimes. occasionally i’m really soft like i usually am in real life, and other times i sound like i’m 35 and still hanging out on old IRC chat rooms. it’s because i’m autistic. this is not an excuse, just an explanation. i apologize in advance if i misread tone or accidentally say something the wrong way.</p>
-                <ul>
-                    <li>
-                        <a href="/assets/keys/public.asc">my GPG key</a>
-                    </li>
-                    <li>
-                        <a href="//signal.me/#eu/1mzcafa2UP_riMs20rBh6FnWmPqkBV7-sEu-JngWnPwCmHC1YR1PqIbISnvlJLeI">signal (ash.1792)</a>
-                    </li>
-                    <li>
-                        <a href="mailto:contact@ashey.me">contact@ashey.me</a>
-                    </li>
-                </ul>
-
-                <h3>donate</h3>
-                <p>please consider donating a few bucks. i don't care if you do or don't, but any cent is appreciated and will go to good things :)</p>
-                <p>here's my XMR address. that's the only way you can donate to me currently.</p>
-                <p class="xmr">86osTRsCuaZQVsKtC39kMZFRxRwWvsKFfCU1DbHpNviujUe8fxCRsYF2kQxcFA9tZN34N3YU8P6byJnFBxjDDLm74L1AABt</p>
-                <hr />
-                <section id="changelog">
-                    <h2>changelog</h2>
-                    <p>does this not render? don't worry, there's always a changelog on my <a href="https://github.com/im-ashey/website/commits/main/">github</a></p>
-                    <div id="commits"></div>
-                </section>
             </section>
         </main>
     </body>
