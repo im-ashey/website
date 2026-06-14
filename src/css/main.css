@@ -61,9 +61,7 @@ hr {
     position: fixed;
     bottom: 0;
     right: 0;
-    height: 10vh;
-    padding: 10px;
-    border-radius: 16px;
+    height: 20vh;
 }
 
 .gallery {
