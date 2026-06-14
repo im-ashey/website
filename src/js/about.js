@@ -16,7 +16,7 @@ const post_url = "https://social.nekoweb.org/post/?id=";
 
         if (div) {
             div.innerHTML = `
-                <p id="nekocafe-text"><a href="${post_url + json["id"]}">${json["post"]}</a></p>
+                <p class="status" id="nekocafe-text"><a href="${post_url + json["id"]}">${json["post"]}</a></p>
                 <p id="nekocafe-time">${time}</p>
             `; // make sure the height on the img fits your page!!!
         }
