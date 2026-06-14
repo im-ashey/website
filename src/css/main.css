@@ -104,3 +104,9 @@ hr {
     right: 125%; 
     top: 110%;
 }
+
+.mood {
+    float: left;
+    padding-top: 5px;
+    padding-right: 5px;
+}
