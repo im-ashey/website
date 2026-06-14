@@ -6,8 +6,38 @@ html {
 }
 
 main {
-    margin: auto;
-    width: 40%;
+    width: 60vw;
+    height: 60vh;
+    overflow: scroll;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translateY(-50%) translateX(-50%);
+    transform: translateY(-50%) translateX(-50%);
+    
+    background-color: #2525257F;
+    border: 1px dotted var(--fnt-color);
+    border-radius: 8px;
+
+    padding: 16px;
+}
+
+.bkg {
+    position:absolute;
+    left:0;
+    top:0;
+    z-index: -1;
+
+    height: 100%;
+    width: 100%;
+    background-color: black;
+
+    background-image: url('/assets/img/bkg.webp');
+    background-repeat:no-repeat;
+    background-size:cover;
+
+    filter: blur(16px) brightness(50%);
 }
 
 hr {
