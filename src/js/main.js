@@ -9,20 +9,18 @@ function renderQuote() {
         .then((response) => response.json())
         .then((data) => {
             let quotenum = Math.floor(Math.random() * Object.keys(data).length);
-            const quoteDom = document.getElementById("quote");
-            if (data["quote." + quotenum]["url"]) {
-                if (quoteDom) {
+            let quoteDom = document.getElementById("quote");
+            console.log(data["quote." + quotenum]['url'])
+            if (data["quote." + quotenum]["url"] != undefined) {
                     quoteDom.outerHTML = "<a id='quote'>";
+                    quoteDom = document.getElementById("quote");
                     quoteDom.innerHTML =
                         `"${data["quote." + quotenum]["content"]}" - ${data["quote." + quotenum]["author"]}`;
                     quoteDom.href = `${data["quote." + quotenum]["url"]}`;
-                }
 
             } else {
-                if (quoteDom) {
                 quoteDom.innerHTML =
                     `"${data["quote." + quotenum]["content"]}" - ${data["quote." + quotenum]["author"]}`;
-                }
             }
         })
         .catch((error) => console.error("something broke idk", error));
