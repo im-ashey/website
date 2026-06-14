@@ -8,12 +8,13 @@
         <link rel="stylesheet" href="/css/main.css" />
         <script data-goatcounter="https://stats.ashey.me/count" async src="//gc.zgo.at/count.js"></script>
         <script src="/js/music.js" defer></script>
-        <script src="/js/themes.js" defer></script>
     </head>
-    <body onload="checkTheme();">
+    <body>
+        <div class="bkg"></div>
         <main>
             <header>
-                <h1><a href="/">music</a></h1>
+                <h1>music</h1>
+                <a href="/">&lt;- go back</a>
                 <hr />
             </header>
             <h2>my collection</h2>
@@ -115,6 +116,45 @@
             <p>here's the last thing that was scrobbled to my last.fm!</p>
             <p id="lastfm">"${name}" by "${artist}" on the "${album}" album.</p>
             <p>check out my profile at <a href="https://www.last.fm/user/im-ash">https://www.last.fm/user/im-ash</a></p>
+            <h3>webamp</h3>
+            <p>if you have your JS enabled, you should see a winamp window in the corner of the website. i just put my top three favorite tracks off my head.</p>
+            <p>if you want more or something new on that player, tell me! it would be appreciated if you provided a mp3 file, too. although, i can just find my own if needed.</p>
+            <div id="webamp"></div>
+            <script type="module">
+                import Webamp from "https://unpkg.com/webamp@^2";
+                const webamp = new Webamp({
+                    initialTracks: [
+                    {
+                        metaData: {
+                        artist: "Mac DeMarco",
+                        title: "Moonlight on the River",
+                        },
+                        url: "/assets/music/moonlight.mp3",
+                        duration: 422.660998,
+                    },
+                    {
+                        metaData: {
+                        title: "Alex G",
+                        artist: "Pretend",
+                        },
+                        url: "/assets/music/pretend.mp3",
+                        duration: 359.810000,
+                    },
+                    {
+                        metaData: {
+                        title: "GEZEBELLE GABURGABLY",
+                        artist: "Stuffed Animals",
+                        },
+                        url: "/assets/music/animals.mp3",
+                        duration: 191.465011,
+                    },
+                    ],
+                });
+                webamp.renderWhenReady(document.getElementById("webamp"));
+            </script>
+            <footer>
+                <p>made with 💖 by ash. licenced under <a href="https://oql.avris.it/license?c=ash%7Chttps%3A%2F%2Fashey.me%2F">OQL v1.4</a>.</p>
+            </footer>
         </main>
     </body>
 </html>
