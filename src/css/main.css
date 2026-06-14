@@ -89,3 +89,9 @@ hr {
         overflow-x: scroll;
     }
 }
+
+#webamp {
+    position: absolute; 
+    right: 125%; 
+    top: 110%;
+}
