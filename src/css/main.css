@@ -21,6 +21,8 @@ main {
     border-radius: 8px;
 
     padding: 16px;
+    padding-top: 0 !important;
+    padding-bottom: 0;
 }
 
 .bkg {
@@ -38,6 +40,13 @@ main {
     background-size:cover;
 
     filter: blur(16px) brightness(50%);
+}
+
+footer {
+    padding-top: 16px;
+    padding-bottom: 0;
+    margin: 0;
+    text-align: center;
 }
 
 hr {
