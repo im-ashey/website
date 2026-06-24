@@ -39,6 +39,7 @@ function renderCounts() {
     })
     .then((response) => response.json())
     .then ((data) => {
+        console.log(data)
         const counterDOM = document.querySelector('p#count')
         const hitCount = data['total']
 
