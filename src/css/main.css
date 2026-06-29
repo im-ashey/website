@@ -15,10 +15,9 @@ main {
     left: 50%;
     -ms-transform: translateY(-50%) translateX(-50%);
     transform: translateY(-50%) translateX(-50%);
-    
+
     background-color: #2525257F;
     border: 1px dotted var(--fnt-color);
-    border-radius: 8px;
 
     padding: 16px;
     padding-top: 0 !important;
@@ -100,8 +99,8 @@ hr {
 }
 
 #webamp {
-    position: absolute; 
-    right: 125%; 
+    position: absolute;
+    right: 125%;
     top: 110%;
 }
 
