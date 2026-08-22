@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "a simple homepage on the internet. that's it.",
   "scripts": {
-  	"build": "rm -rf dist && mkdir dist && cd src && cp -r --parents $(find . -type f -not -name '*ts' ) ../dist && cd .. && npx tsc"
+    "build": "npm install typescript && rm -rf dist && mkdir dist && cd src && cp -r --parents $(find . -type f -not -name '*ts' ) ../dist && cd .. && npx tsc"
   },
   "repository": {
     "type": "git",
