@@ -28,11 +28,11 @@ jobs:
         with:
           node-version: '22'
       - name: 'Build Website'
-        run: mv src public
+        run: npm run build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: 'public'
+          path: 'dist'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5

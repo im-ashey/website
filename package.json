@@ -1,0 +1,20 @@
+{
+  "name": "freecats.me",
+  "version": "1.0.0",
+  "description": "a simple homepage on the internet. that's it.",
+  "scripts": {
+  	"build": "rm -rf dist && mkdir dist && cd src && cp -r --parents $(find . -type f -not -name '*ts' ) ../dist && cd .. && npx tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/im-ashey/website.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/im-ashey/website/issues"
+  },
+  "homepage": "https://freecats.me/",
+  "devDependencies": {
+    "typescript": "^7.0.2"
+  }
+}
