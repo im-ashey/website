@@ -1,5 +1,6 @@
 let titleDOM = document.querySelector('h1#title-header')
 
 if (titleDOM) {
-	titleDOM.innerHTML = window.location.href
+	let titleText = window.location.href
+	titleDOM.innerHTML = titleText.slice(4,-1)
 }
