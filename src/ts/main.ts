@@ -1,6 +1,17 @@
-let titleDOM = document.querySelector('h1#title-header')
+import { generateNav } from './navigation.js'
 
-if (titleDOM) {
-	let titleText = window.location.href
-	titleDOM.innerHTML = titleText.slice(4,-1)
+window.addEventListener("DOMContentLoaded", () => {
+	renderHeader();
+	// generateNav();
+});
+
+function renderHeader() {
+    let titleDOM = document.getElementById('title-header') as HTMLBodyElement;
+    const windowLocation = window.location.href as string;
+
+		if (windowLocation?.includes('https')) {
+            titleDOM.innerHTML = windowLocation.slice(5, -1)
+        } else {
+            titleDOM.innerHTML = windowLocation.slice(4, -1)
+        }
 }
