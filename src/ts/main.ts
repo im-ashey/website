@@ -2,11 +2,11 @@ import { generateNav } from './navigation.js'
 
 window.addEventListener("DOMContentLoaded", () => {
 	renderHeader();
-	// generateNav();
+	generateNav();
 });
 
 function renderHeader() {
-    let titleDOM = document.getElementById('title-header') as HTMLBodyElement;
+    let titleDOM = document.getElementById('title-header') as HTMLHeadingElement;
     const windowLocation = window.location.href as string;
 
 		if (windowLocation?.includes('https')) {

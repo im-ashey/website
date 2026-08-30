@@ -1,25 +1,21 @@
-const links = ['about', 'music', 'contact']
-let navDom = document.querySelector('nav')
-let navElement = document.createElement('ul')
+const links = ['about', 'music', 'contact', 'other'];
+const linksLength = links.length - 1;
+let navDOM = document.getElementById('navigationElement') as HTMLUListElement;
 
 function generateNav() {
-		navElement.appendChild(document.createTextNode("hello!"));
+    for (let i = 0 as number; i <= linksLength; i++) {
+        let navButtonElement = document.createElement('ul') as HTMLElement;
+        let navButtonListElement = document.createElement('li');
+        let navButtonAnchorElement = document.createElement('a');
+        let linkTextNode = document.createTextNode(links[i]!);
 
-		if (navDom) {
-				navDom.insertBefore(navElement, navDom)
-		}
+        navButtonElement.appendChild(navButtonListElement);
+        navButtonAnchorElement.appendChild(linkTextNode);
+        navButtonAnchorElement.href = links[i]!;
+        navButtonListElement.appendChild(navButtonAnchorElement);
+
+        navDOM.appendChild(navButtonElement);
+    }
 }
-
-// 				<ul id="nav">
-//					<li>
-//						<a href="about">about</a>
-//					</li>
-//					<li>
-//						<a href="music">music</a>
-//					</li>
-//					<li>
-//						<a href="contact">contact</a>
-//					</li>
-//				</ul>
 
 export { generateNav }

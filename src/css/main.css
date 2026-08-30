@@ -1,5 +1,5 @@
 body {
-	color: green;
+	color: red;
 	background-color: black;
 	font-family: monospace;
 
@@ -13,7 +13,7 @@ main {
 }
 
 a {
-	color: green;
+	color: red;
 	text-decoration: none;
 }
 
@@ -26,9 +26,9 @@ ul {
 
 li {
 	flex-grow: 1;
-	text-align: center;
+	text-align: red center;
 	padding: 5px;
-	border: 1px green solid;
+	border: 1px  solid;
 }
 
 @media screen and (max-width: 1000px) {
