@@ -20,22 +20,14 @@ function renderHeader() {
     let headerText = null;
 
     if (windowLocation?.includes('https')) {
-        if (windowLocation.slice(-1) == '/') {
-            headerText = windowLocation.slice(5, -1);
+        headerText = windowLocation.slice(5);
 
-        } else {
-            headerText = windowLocation.slice(5, -2);
-        }
         headerDOM.innerHTML = headerText;
         titleDOM.innerHTML = headerText;
 
     } else {
-        if (windowLocation.slice(-1) == '/') {
-            headerText = windowLocation.slice(4, -1);
+        headerText = windowLocation.slice(4);
 
-        } else {
-            headerText = windowLocation.slice(4, -2);
-        }
         headerDOM.innerHTML = headerText;
         titleDOM.innerHTML = headerText;
     }

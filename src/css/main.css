@@ -51,6 +51,10 @@ li {
     float: left;
 }
 
+#darkThemeButton, #lightThemeButton {
+    cursor: pointer;
+}
+
 @media screen and (max-width: 1000px) {
 	main {
 		width: 95% !important;
