@@ -1,10 +1,12 @@
 import { generateNav } from './navigation.js'
-import { setDarkTheme, setLightTheme } from './theme.js'
+import { setSavedTheme, setDarkTheme, setLightTheme } from './theme.js'
 
 let darkThemeButtonDOM = document.getElementById('darkThemeButton') as HTMLAnchorElement;
 let lightThemeButtonDOM = document.getElementById('lightThemeButton') as HTMLAnchorElement;
 
 window.addEventListener("DOMContentLoaded", () => {
+    setSavedTheme();
+
 	renderHeader();
     generateNav();
 
