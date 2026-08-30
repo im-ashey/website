@@ -1,6 +1,11 @@
+:root {
+    --text-color: #00AA00;
+    --background-color: #000000;
+}
+
 body {
-	color: red;
-	background-color: black;
+	color: var(--text-color);
+	background-color: var(--background-color);
 	font-family: monospace;
 
 	margin: 0;
@@ -8,12 +13,12 @@ body {
 }
 
 main {
-	width: 40%;
+	width: 70%;
 	margin: auto;
 }
 
 a {
-	color: red;
+	color: var(--text-color);
 	text-decoration: none;
 }
 
@@ -26,9 +31,9 @@ ul {
 
 li {
 	flex-grow: 1;
-	text-align: red center;
+	text-align: center;
 	padding: 5px;
-	border: 1px  solid;
+	border: 1px solid;
 }
 
 @media screen and (max-width: 1000px) {

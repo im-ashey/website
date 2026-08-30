@@ -1,8 +1,14 @@
 import { generateNav } from './navigation.js'
+import { setDarkTheme, setLightTheme } from './theme.js'
+
+let darkThemeButtonDOM = document.getElementById('darkThemeButton') as HTMLAnchorElement;
+let lightThemeButtonDOM = document.getElementById('lightThemeButton') as HTMLAnchorElement;
 
 window.addEventListener("DOMContentLoaded", () => {
 	renderHeader();
-	generateNav();
+    generateNav();
+
+    setupEventListeners();
 });
 
 function renderHeader() {
@@ -14,4 +20,14 @@ function renderHeader() {
         } else {
             titleDOM.innerHTML = windowLocation.slice(4, -1)
         }
+}
+
+function setupEventListeners() {
+    darkThemeButtonDOM.addEventListener('click', (e) => { // (e) => is cleaner, but less verbose on what it does exactly.
+        setDarkTheme();
+    });
+
+    lightThemeButtonDOM.addEventListener('click', (e) => {
+        setLightTheme();
+    });
 }

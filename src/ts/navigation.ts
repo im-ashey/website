@@ -15,7 +15,6 @@ function generateNav() {
         navButtonListElement.appendChild(navButtonAnchorElement);
     }
     navDOM.appendChild(navButtonElement);
-
 }
 
 export { generateNav }
