@@ -42,11 +42,11 @@ function renderHeader() {
 }
 
 function setupEventListeners() {
-    darkThemeButtonDOM.addEventListener('click', (e) => { // (e) => is cleaner, but less verbose on what it does exactly.
+    darkThemeButtonDOM?.addEventListener('click', (e) => { // (e) => is cleaner, but less verbose on what it does exactly.
         setDarkTheme();
     });
 
-    lightThemeButtonDOM.addEventListener('click', (e) => {
+    lightThemeButtonDOM?.addEventListener('click', (e) => {
         setLightTheme();
     });
 }
