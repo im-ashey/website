@@ -14,14 +14,20 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 
 function renderHeader() {
-    let titleDOM = document.getElementById('title-header') as HTMLHeadingElement;
-    const windowLocation = window.location.href as string;
+    let headerDOM = document.getElementById('title-header') as HTMLHeadingElement;
+    let titleDOM = document.querySelector('title') as HTMLTitleElement;
+    const windowLocation = window.location.href;
 
-		if (windowLocation?.includes('https')) {
-            titleDOM.innerHTML = windowLocation.slice(5, -1)
-        } else {
-            titleDOM.innerHTML = windowLocation.slice(4, -1)
-        }
+    if (windowLocation?.includes('https')) {
+        const headerText = windowLocation.slice(5, -1);
+        headerDOM.innerHTML = headerText;
+        titleDOM.innerHTML = headerText;
+
+    } else {
+        const headerText = windowLocation.slice(4, -1);
+        headerDOM.innerHTML = headerText;
+        titleDOM.innerHTML = headerText;
+    }
 }
 
 function setupEventListeners() {
