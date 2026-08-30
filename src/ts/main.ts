@@ -15,7 +15,7 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 
 function renderHeader() {
-    let headerDOM = document.getElementById('title-header') as HTMLHeadingElement;
+    let headerDOM = document.getElementById('titleHeader') as HTMLHeadingElement;
     let titleDOM = document.querySelector('title') as HTMLTitleElement;
     const windowLocation = window.location.href;
 
