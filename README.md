@@ -1,3 +1,3 @@
-# ashey.me
+# ://freecats.me 
 
-a simple homepage on the internet. that's it.
+too lazy to fill out a proper readme.md, i'll do it when i have the time.
